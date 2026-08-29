@@ -1,0 +1,58 @@
+name: TradeDataHub Public API
+description: >-
+  A marketplace API for downloadable CSV datasets of verified U.S. contractor and trade-business listings. Offers a
+  free, unauthenticated REST discovery API under /api/v1/ (coverage, states, trades, cities, datasets, previews,
+  pricing) plus paid dataset retrieval via x402 (testnet-only, Base Sepolia). Backed by an OpenAPI 3.1.0 contract and
+  llms.txt/llms-full.txt agent guides.
+url: https://raw.githubusercontent.com/api-evangelist/tradedatahub-public-api/refs/heads/main/apis.yml
+created: '2026-08-29'
+modified: '2026-08-29'
+specificationVersion: '0.21'
+tags:
+  - contractor data
+  - B2B data
+  - business listings
+  - datasets
+  - CSV
+  - lead generation
+  - sales intelligence
+  - x402
+  - agent-native
+  - llms.txt
+  - OpenAPI
+apis:
+  - name: TradeDataHub Public API
+    description: >-
+      Free, unauthenticated REST discovery API for contractor/trade-business datasets, with paid CSV retrieval via x402
+      (testnet-only). Includes coverage stats, inventory discovery, dataset listings, pricing, and masked previews.
+    humanURL: https://www.tradedatahub.net/developers/
+    baseURL: https://www.tradedatahub.net
+    tags:
+      - contractor data
+      - B2B data
+      - business listings
+      - datasets
+      - CSV
+      - lead generation
+      - sales intelligence
+      - x402
+      - agent-native
+      - llms.txt
+      - OpenAPI
+    properties:
+      - type: OpenAPI
+        url: https://www.tradedatahub.net/openapi.json
+      - type: Documentation
+        url: https://www.tradedatahub.net/developers/
+      - type: LLMsTxt
+        url: https://www.tradedatahub.net/llms.txt
+      - type: LLMsTxt
+        url: https://www.tradedatahub.net/llms-full.txt
+maintainers:
+  - FN: TradeDataHub Public API
+    url: https://www.tradedatahub.net/
+generated:
+  by: apis.io/add
+  model: claude-opus-4-8
+  confidence: 95
+  at: '2026-08-29T02:05:47.534Z'
