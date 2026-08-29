@@ -1,0 +1,3068 @@
+{
+  "metadata": {
+    "status": 402,
+    "message": "Multi-state trade data available. Current records: 33,753. Email tradedatahub@gmail.com for API access."
+  },
+  "data": [
+    {
+      "category": "Roofer",
+      "city": "Houston",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Houston",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Houston",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Antonio",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Antonio",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Antonio",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Dallas",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Dallas",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Dallas",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Austin",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Austin",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Austin",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fort Worth",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Fort Worth",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Fort Worth",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "El Paso",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "El Paso",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "El Paso",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Arlington",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Arlington",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Arlington",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Corpus Christi",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Corpus Christi",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Corpus Christi",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Plano",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Plano",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Plano",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Lubbock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Lubbock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Lubbock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Laredo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Laredo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Laredo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Irving",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Irving",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Irving",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Garland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Garland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Garland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Frisco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Frisco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Frisco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "McKinney",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "McKinney",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "McKinney",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Amarillo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Amarillo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Amarillo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Grand Prairie",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Grand Prairie",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Grand Prairie",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Brownsville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Brownsville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Brownsville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Denton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Denton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Denton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Killeen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Killeen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Killeen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pasadena",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Pasadena",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Pasadena",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Mesquite",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Mesquite",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Mesquite",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "McAllen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "McAllen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "McAllen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Waco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Waco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Waco",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Midland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Midland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Midland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Lewisville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Lewisville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Lewisville",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Carrollton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Carrollton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Carrollton",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Round Rock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Round Rock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Round Rock",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Abilene",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Abilene",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Abilene",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pearland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Pearland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Pearland",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "College Station",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "College Station",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "College Station",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Richardson",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Richardson",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Richardson",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "League City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "League City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "League City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Odessa",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Odessa",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Odessa",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Sugar Land",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Sugar Land",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Sugar Land",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Allen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Allen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Allen",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tyler",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Tyler",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Tyler",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Edinburg",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Edinburg",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Edinburg",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Wichita Falls",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Wichita Falls",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Wichita Falls",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "New Braunfels",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "New Braunfels",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "New Braunfels",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Angelo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Angelo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Angelo",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Conroe",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Conroe",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Conroe",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Temple",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Temple",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Temple",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bryan",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bryan",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bryan",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Mission",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Mission",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Mission",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Baytown",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Baytown",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Baytown",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Longview",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Longview",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Longview",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pharr",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Pharr",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Pharr",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Missouri City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Missouri City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Missouri City",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Flower Mound",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Flower Mound",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Flower Mound",
+      "state": "Texas",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Jacksonville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tampa",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tampa",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tampa",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Orlando",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Orlando",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Orlando",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "St. Petersburg",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "St. Petersburg",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "St. Petersburg",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hialeah",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hialeah",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hialeah",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tallahassee",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tallahassee",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Tallahassee",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fort Lauderdale",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fort Lauderdale",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fort Lauderdale",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cape Coral",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cape Coral",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cape Coral",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pembroke Pines",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pembroke Pines",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pembroke Pines",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Port Saint Lucie",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Port Saint Lucie",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Port Saint Lucie",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hollywood",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hollywood",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hollywood",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Gainesville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Gainesville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Gainesville",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miramar",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miramar",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miramar",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Coral Springs",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Coral Springs",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Coral Springs",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "West Palm Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "West Palm Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "West Palm Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Palm Bay",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Palm Bay",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Palm Bay",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Clearwater",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Clearwater",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Clearwater",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami Gardens",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami Gardens",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Miami Gardens",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pompano Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pompano Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pompano Beach",
+      "state": "Florida",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Los Angeles",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Los Angeles",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Los Angeles",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Diego",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Diego",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Diego",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Jose",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Jose",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Jose",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Francisco",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Francisco",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Francisco",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fresno",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Fresno",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Fresno",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Sacramento",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Sacramento",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Sacramento",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Long Beach",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Long Beach",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Long Beach",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Oakland",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Oakland",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Oakland",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bakersfield",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bakersfield",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bakersfield",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Anaheim",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Anaheim",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Anaheim",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Riverside",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Riverside",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Riverside",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Santa Ana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Santa Ana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Santa Ana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Stockton",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Stockton",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Stockton",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Chula Vista",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Chula Vista",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Chula Vista",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Irvine",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Irvine",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Irvine",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fremont",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Fremont",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Fremont",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "San Bernardino",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "San Bernardino",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "San Bernardino",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Fontana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Fontana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Fontana",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Modesto",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Modesto",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Modesto",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Oxnard",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Oxnard",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Oxnard",
+      "state": "California",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "New York City",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "New York City",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "New York City",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Brooklyn",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Brooklyn",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Brooklyn",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Queens",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Queens",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Queens",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Manhattan",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Manhattan",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Manhattan",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "The Bronx",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "The Bronx",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "The Bronx",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Staten Island",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Staten Island",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Staten Island",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Buffalo",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Buffalo",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Buffalo",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Upper West Side",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Upper West Side",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Upper West Side",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Jamaica",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Jamaica",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Jamaica",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Rochester",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Rochester",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Rochester",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Yonkers",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Yonkers",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Yonkers",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "East Flatbush",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "East Flatbush",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "East Flatbush",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "East New York",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "East New York",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "East New York",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Washington Heights",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Washington Heights",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Washington Heights",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Astoria",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Astoria",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Astoria",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Borough Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Borough Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Borough Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Syracuse",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Syracuse",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Syracuse",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Sunset Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Sunset Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Sunset Park",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Sheepshead Bay",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Sheepshead Bay",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Sheepshead Bay",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Amherst",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Amherst",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Amherst",
+      "state": "New York",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Chicago",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Chicago",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Chicago",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Aurora",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Aurora",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Aurora",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Rockford",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Rockford",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Rockford",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Joliet",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Joliet",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Joliet",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Naperville",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Naperville",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Naperville",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Springfield",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Springfield",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Springfield",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "North Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "North Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "North Peoria",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Elgin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Elgin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Elgin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Waukegan",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Waukegan",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Waukegan",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "West Town",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "West Town",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "West Town",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Champaign",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Champaign",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Champaign",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Near North Side",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Near North Side",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Near North Side",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cicero",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Cicero",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Cicero",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Belmont Cragin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Belmont Cragin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Belmont Cragin",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bloomington",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bloomington",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bloomington",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Arlington Heights",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Arlington Heights",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Arlington Heights",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Evanston",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Evanston",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Evanston",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Schaumburg",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Schaumburg",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Schaumburg",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bolingbrook",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bolingbrook",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bolingbrook",
+      "state": "Illinois",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Philadelphia",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Pittsburgh",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Allentown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Erie",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Erie",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Erie",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Reading",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Reading",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Reading",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Scranton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Scranton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Scranton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bethlehem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bethlehem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bethlehem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Bensalem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Bensalem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Bensalem",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Lancaster",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Lancaster",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Lancaster",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Center City",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Center City",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Center City",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Abington",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Abington",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Abington",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Levittown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Levittown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Levittown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Havertown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Havertown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Havertown",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Harrisburg",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Harrisburg",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Harrisburg",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Whitman",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Whitman",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Whitman",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Wharton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Wharton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Wharton",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Oxford Circle",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Oxford Circle",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Oxford Circle",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Altoona",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Altoona",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Altoona",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Penn Hills",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Penn Hills",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Penn Hills",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "York",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "York",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "York",
+      "state": "Pennsylvania",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Columbus",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Columbus",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Columbus",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cleveland",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Cleveland",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Cleveland",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Cincinnati",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Toledo",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Toledo",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Toledo",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Akron",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Akron",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Akron",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Dayton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Dayton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Dayton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Parma",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Parma",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Parma",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Canton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Canton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Canton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Youngstown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Youngstown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Youngstown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Lorain",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Lorain",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Lorain",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Hamilton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Hamilton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Hamilton",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Springfield",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Springfield",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Springfield",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Kettering",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Kettering",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Kettering",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Elyria",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Elyria",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Elyria",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Lakewood",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Lakewood",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Lakewood",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Cuyahoga Falls",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Cuyahoga Falls",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Cuyahoga Falls",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Middletown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Middletown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Middletown",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Newark",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Newark",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Newark",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Euclid",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Euclid",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Euclid",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Roofer",
+      "city": "Mentor",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Plumber",
+      "city": "Mentor",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    },
+    {
+      "category": "Electrician",
+      "city": "Mentor",
+      "state": "Ohio",
+      "status": "PAY_TO_UNLOCK"
+    }
+  ]
+}

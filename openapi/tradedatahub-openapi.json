@@ -1,0 +1,955 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "TradeDataHub Public API",
+    "version": "1.0.0",
+    "description": "Free machine-readable discovery endpoints over the canonical product catalog. An agent can go from zero knowledge to a specific product, its price, a masked preview, and the paid retrieval resource without scraping HTML. x402 agent payment access is available for TESTNET integration and testing only. Network: Base Sepolia (eip155:84532). Mainnet settlement is NOT enabled. Human Stripe purchasing remains a separate, unchanged path. Agents may inspect the HTTP 402 Payment-Required challenge without making any payment. See https://www.tradedatahub.net/developers/."
+  },
+  "servers": [
+    {
+      "url": "https://www.tradedatahub.net"
+    }
+  ],
+  "tags": [
+    {
+      "name": "discovery",
+      "description": "Zero-knowledge inventory discovery (coverage, states, trades, cities)."
+    },
+    {
+      "name": "datasets",
+      "description": "Dataset metadata, pricing, masked previews."
+    },
+    {
+      "name": "commerce",
+      "description": "x402 TESTNET paid retrieval. Mainnet is NOT enabled."
+    }
+  ],
+  "paths": {
+    "/api/v1/": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "API index \u2014 endpoint list and paid access pointer",
+        "description": "Returns the free discovery endpoint list and the x402 TESTNET paid endpoint pointer.",
+        "responses": {
+          "200": {
+            "description": "Endpoint index",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "endpoints"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "endpoints": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    },
+                    "paid_endpoint": {
+                      "type": "string",
+                      "description": "x402 TESTNET ONLY (Base Sepolia eip155:84532); unpaid requests receive HTTP 402 Payment Required with the challenge; mainnet settlement is NOT enabled."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/texas-trades-teaser.json": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "Get a browser-safe masked trade-business teaser",
+        "responses": {
+          "200": {
+            "description": "Masked teaser without paid contact records",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Preview"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/coverage": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "Overall platform coverage and pricing model (start here)",
+        "responses": {
+          "200": {
+            "description": "Coverage summary",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Coverage"
+                },
+                "example": {
+                  "api_version": "1.0.0",
+                  "record_count": 33753,
+                  "live_states": 7,
+                  "trades": 50,
+                  "cities": 170,
+                  "product_count": 8588,
+                  "currency": "usd",
+                  "price_model": "one-time CSV per dataset",
+                  "last_updated": "2026-08-19"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/states": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "List live states with record counts and prices",
+        "responses": {
+          "200": {
+            "description": "States",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "states"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "states": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/State"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/trades": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "List trades with aggregate record counts",
+        "responses": {
+          "200": {
+            "description": "Trades",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "trades"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "trades": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Trade"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cities": {
+      "get": {
+        "tags": [
+          "discovery"
+        ],
+        "summary": "List cities (filter by ?state=)",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Exact state name as returned by /api/v1/states, e.g. `Texas` (case-sensitive)."
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Cities (paginated)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "pagination",
+                    "cities"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "pagination": {
+                      "$ref": "#/components/schemas/Pagination"
+                    },
+                    "cities": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/City"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown state",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "List datasets with optional filters (deterministic full catalog enumeration)",
+        "description": "Use filters to enumerate the complete purchasable catalog without scraping HTML. Filter values must match canonical names exactly (e.g. `state=Texas`, `trade=HVAC Contractor`). Paginate with limit/offset (limit<=100).",
+        "parameters": [
+          {
+            "name": "state",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Exact state name, e.g. `Texas`."
+          },
+          {
+            "name": "trade",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Exact trade name, e.g. `Roofer`."
+          },
+          {
+            "name": "city",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Exact city name."
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "city_trade",
+                "state_trade",
+                "state",
+                "mega_pack"
+              ]
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 100,
+              "default": 100
+            }
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "minimum": 0,
+              "default": 0
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dataset listings (paginated)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "pagination",
+                    "datasets"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "pagination": {
+                      "$ref": "#/components/schemas/Pagination"
+                    },
+                    "datasets": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/Dataset"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid limit/offset",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets/{product_id}": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Get a single dataset's public metadata",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ProductId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Dataset metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Dataset"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Dataset not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets/{product_id}/price": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Get price and availability",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ProductId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Price metadata",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Price"
+                },
+                "example": {
+                  "api_version": "1.0.0",
+                  "product_id": "state-trade:florida:appliance-repair-technician",
+                  "product_type": "state_trade",
+                  "state": "Florida",
+                  "trade": "Appliance Repair Technician",
+                  "record_count": 434,
+                  "amount_cents": 1900,
+                  "price": "19.00",
+                  "currency": "USD",
+                  "available_for_purchase": true
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Dataset not found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets/{product_id}/preview": {
+      "get": {
+        "tags": [
+          "datasets"
+        ],
+        "summary": "Get a masked availability preview (no paid contact values)",
+        "description": "Returns masked preview records only: business identities are replaced with `Masked business` and only availability booleans (phone_available/website_available) plus city, trade, and verification_date are exposed. Actual contact values are delivered only after purchase.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ProductId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Masked preview",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Preview"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Preview unavailable for this dataset type or product",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/datasets/{product_id}/download": {
+      "get": {
+        "tags": [
+          "commerce"
+        ],
+        "summary": "Paid dataset retrieval via x402 (TESTNET ONLY)",
+        "description": "x402 paid retrieval. TESTNET ONLY: network is Base Sepolia (eip155:84532); mainnet settlement is NOT enabled. With no PAYMENT-SIGNATURE header the endpoint returns HTTP 402 Payment Required including the current x402 Payment-Required challenge (the server generates it dynamically; do not hardcode it). After a valid TESTNET settlement the endpoint returns 200 with a one-shot authorized download URL. Human Stripe purchasing is a separate, unchanged path. Agents may inspect the 402 challenge without making any payment.",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ProductId"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Authorized delivery after valid TESTNET settlement (one-shot download URL)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "api_version",
+                    "product_id",
+                    "download_url"
+                  ],
+                  "properties": {
+                    "api_version": {
+                      "type": "string"
+                    },
+                    "product_id": {
+                      "type": "string"
+                    },
+                    "filename": {
+                      "type": "string"
+                    },
+                    "download_url": {
+                      "type": "string"
+                    },
+                    "record_count": {
+                      "type": "integer"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "402": {
+            "description": "Payment Required \u2014 includes the current x402 Payment-Required challenge",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentRequired"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid payment payload/signature (fail-closed)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Dataset not found, or the testnet rail is disabled (fail-closed `not_yet_available`)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "Payment replay / duplicate settlement rejected (fail-closed)",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "parameters": {
+      "ProductId": {
+        "name": "product_id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "description": "Canonical product identifier. Formats: `state:{state_slug}` (e.g. `state:texas`), `state-trade:{state_slug}:{trade_slug}` (e.g. `state-trade:florida:roofer`), `city-trade:{state_slug}:{city_slug}:{trade_slug}` (e.g. `city-trade:texas:austin:plumber`), `mega-pack:seven-live-states`. Slugs are lowercase hyphenated; always derive product_id values from the discovery endpoints rather than constructing them ad hoc."
+      }
+    },
+    "schemas": {
+      "Pagination": {
+        "type": "object",
+        "required": [
+          "total",
+          "limit",
+          "offset"
+        ],
+        "properties": {
+          "total": {
+            "type": "integer"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "offset": {
+            "type": "integer"
+          }
+        }
+      },
+      "Coverage": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "record_count",
+          "currency",
+          "price_model"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "live_states": {
+            "type": "integer"
+          },
+          "trades": {
+            "type": "integer"
+          },
+          "cities": {
+            "type": "integer"
+          },
+          "product_count": {
+            "type": "integer"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "price_model": {
+            "type": "string"
+          },
+          "last_updated": {
+            "type": "string",
+            "nullable": true
+          }
+        }
+      },
+      "State": {
+        "type": "object",
+        "required": [
+          "product_id",
+          "state",
+          "record_count",
+          "price",
+          "currency"
+        ],
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "state": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "amount_cents": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "last_updated": {
+            "type": "string"
+          },
+          "available_for_purchase": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Trade": {
+        "type": "object",
+        "required": [
+          "trade",
+          "record_count",
+          "product_count"
+        ],
+        "properties": {
+          "trade": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "product_count": {
+            "type": "integer"
+          }
+        }
+      },
+      "City": {
+        "type": "object",
+        "required": [
+          "state",
+          "city",
+          "record_count",
+          "trade_count"
+        ],
+        "properties": {
+          "state": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "trade_count": {
+            "type": "integer"
+          }
+        }
+      },
+      "Dataset": {
+        "type": "object",
+        "required": [
+          "product_id",
+          "product_type",
+          "record_count",
+          "price",
+          "currency"
+        ],
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_type": {
+            "type": "string",
+            "enum": [
+              "city_trade",
+              "state_trade",
+              "state",
+              "mega_pack"
+            ]
+          },
+          "state": {
+            "type": "string"
+          },
+          "city": {
+            "type": "string"
+          },
+          "trade": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "amount_cents": {
+            "type": "integer"
+          },
+          "price": {
+            "type": "string"
+          },
+          "currency": {
+            "type": "string"
+          },
+          "last_updated": {
+            "type": "string"
+          },
+          "available_for_purchase": {
+            "type": "boolean"
+          }
+        }
+      },
+      "Price": {
+        "$ref": "#/components/schemas/Dataset"
+      },
+      "PreviewRecord": {
+        "type": "object",
+        "required": [
+          "business",
+          "city",
+          "trade",
+          "phone_available",
+          "website_available"
+        ],
+        "properties": {
+          "business": {
+            "type": "string",
+            "description": "Always the literal `Masked business` in previews.",
+            "example": "Masked business"
+          },
+          "city": {
+            "type": "string"
+          },
+          "trade": {
+            "type": "string"
+          },
+          "phone_available": {
+            "type": "boolean",
+            "description": "Whether the purchased record includes a phone value."
+          },
+          "website_available": {
+            "type": "boolean",
+            "description": "Whether the purchased record includes a website value."
+          },
+          "verification_date": {
+            "type": "string",
+            "description": "Source-pipeline verification date (YYYY-MM-DD)."
+          }
+        }
+      },
+      "Preview": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "product_id",
+          "classification",
+          "records"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string"
+          },
+          "product_id": {
+            "type": "string"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "record_count": {
+            "type": "integer"
+          },
+          "fields": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "records": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PreviewRecord"
+            }
+          },
+          "notice": {
+            "type": "string"
+          }
+        }
+      },
+      "Error": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "error"
+        ],
+        "properties": {
+          "api_version": {
+            "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "required": [
+              "code",
+              "message"
+            ],
+            "properties": {
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              },
+              "details": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            }
+          }
+        }
+      },
+      "PaymentRequired": {
+        "type": "object",
+        "required": [
+          "api_version",
+          "error",
+          "payment_required"
+        ],
+        "description": "HTTP 402 body. The live challenge is generated dynamically by the server; treat the `payment_required` object as authoritative and never hardcode it. TESTNET ONLY (Base Sepolia eip155:84532).",
+        "properties": {
+          "api_version": {
+            "type": "string"
+          },
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "example": "payment_required"
+              },
+              "message": {
+                "type": "string"
+              }
+            }
+          },
+          "payment_required": {
+            "type": "object",
+            "properties": {
+              "x402Version": {
+                "type": "integer"
+              },
+              "resource": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string"
+                  },
+                  "mimeType": {
+                    "type": "string"
+                  }
+                }
+              },
+              "accepts": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "network",
+                    "asset",
+                    "amount",
+                    "payTo"
+                  ],
+                  "properties": {
+                    "network": {
+                      "type": "string",
+                      "description": "CAIP-2 chain id; testnet is `eip155:84532` (Base Sepolia)."
+                    },
+                    "asset": {
+                      "type": "string",
+                      "description": "USDC contract address on the testnet network."
+                    },
+                    "amount": {
+                      "type": "string",
+                      "description": "Atomic units (6 decimals)."
+                    },
+                    "payTo": {
+                      "type": "string",
+                      "description": "Testnet recipient address."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

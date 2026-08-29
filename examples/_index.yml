@@ -1,0 +1,54 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tradedatahub.net/api/v1/
+name: TradeDataHub live response examples
+description: >-
+  Real, unmodified JSON responses captured from the free unauthenticated TradeDataHub discovery API on
+  2026-08-29. The provider's OpenAPI carries only 4 inline `example` values and no `examples` objects,
+  so these captures are the concrete payloads a client can test against. Nothing here is synthesised.
+examples:
+  - file: tradedatahub-coverage-response.json
+    operation: GET /api/v1/coverage
+    url: https://www.tradedatahub.net/api/v1/coverage
+    http_status: 200
+  - file: tradedatahub-states-response.json
+    operation: GET /api/v1/states
+    url: https://www.tradedatahub.net/api/v1/states
+    http_status: 200
+  - file: tradedatahub-trades-response.json
+    operation: GET /api/v1/trades
+    url: https://www.tradedatahub.net/api/v1/trades
+    http_status: 200
+  - file: tradedatahub-cities-texas-response.json
+    operation: GET /api/v1/cities
+    url: https://www.tradedatahub.net/api/v1/cities?state=Texas
+    http_status: 200
+  - file: tradedatahub-datasets-response.json
+    operation: GET /api/v1/datasets
+    url: https://www.tradedatahub.net/api/v1/datasets?state=Texas&trade=Roofer&limit=3
+    http_status: 200
+  - file: tradedatahub-dataset-detail-response.json
+    operation: GET /api/v1/datasets/{product_id}
+    url: https://www.tradedatahub.net/api/v1/datasets/state:california
+    http_status: 200
+  - file: tradedatahub-price-response.json
+    operation: GET /api/v1/datasets/{product_id}/price
+    url: https://www.tradedatahub.net/api/v1/datasets/state:california/price
+    http_status: 200
+  - file: tradedatahub-preview-response.json
+    operation: GET /api/v1/datasets/{product_id}/preview
+    url: https://www.tradedatahub.net/api/v1/datasets/state-trade:florida:roofer/preview
+    http_status: 200
+  - file: tradedatahub-teaser-response.json
+    operation: GET /api/v1/texas-trades-teaser.json
+    url: https://www.tradedatahub.net/api/v1/texas-trades-teaser.json
+    http_status: 200
+  - file: tradedatahub-error-404-response.json
+    operation: GET /api/v1/datasets/{product_id}
+    url: https://www.tradedatahub.net/api/v1/datasets/does-not-exist-xyz
+    http_status: 404
+example_count: 10
+note: >-
+  No example contains a paid contact record. Previews are masked by design (business is always the
+  literal "Masked business"; phone/website reduce to boolean availability flags), and the teaser marks
+  every row PAY_TO_UNLOCK.

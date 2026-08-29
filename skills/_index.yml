@@ -1,0 +1,41 @@
+generated: '2026-08-29'
+method: generated
+source: openapi/tradedatahub-openapi.json
+name: TradeDataHub agent skills
+description: >-
+  Packaged agent operating instructions for the TradeDataHub Public API, grounded in the eleven GET
+  operations of the provider's published OpenAPI 3.1.0 contract and in behaviours verified by live
+  probe on 2026-08-29. The provider publishes no skills or AGENTS.md of its own; these are generated.
+provider_published_skills: false
+provider_skills_probes:
+  - url: https://www.tradedatahub.net/developers/
+    http_status: 200
+    finding: No skills, AGENTS.md or agent instruction file referenced.
+  - url: https://www.tradedatahub.net/llms.txt
+    http_status: 200
+    finding: Lists resources and endpoints; no packaged skill.
+grounding_caveat: >-
+  The published contract declares NO operationIds, so every skill references operations by HTTP method
+  and path. Synthesised operationIds live only in overlays/tradedatahub-openapi-overlay.yaml.
+skills:
+  - name: tradedatahub-enumerate-catalog
+    file: skills/tradedatahub-enumerate-catalog.md
+    summary: Page the complete 8,588-product catalog deterministically over the free API instead of scraping HTML.
+    operations:
+      - GET /api/v1/coverage
+      - GET /api/v1/states
+      - GET /api/v1/trades
+      - GET /api/v1/cities
+      - GET /api/v1/datasets
+  - name: tradedatahub-price-and-preview-before-buying
+    file: skills/tradedatahub-price-and-preview-before-buying.md
+    summary: >-
+      Confirm price, inspect the masked preview and read the x402 402 challenge without paying, with
+      the irreversibility and data-use obligations stated up front.
+    operations:
+      - GET /api/v1/datasets
+      - GET /api/v1/datasets/{product_id}
+      - GET /api/v1/datasets/{product_id}/price
+      - GET /api/v1/datasets/{product_id}/preview
+      - GET /api/v1/datasets/{product_id}/download
+skill_count: 2

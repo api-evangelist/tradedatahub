@@ -1,0 +1,74 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.tradedatahub.net/developers/
+also_derived_from: openapi/tradedatahub-openapi.json
+name: TradeDataHub API lifecycle
+description: >-
+  Lifecycle posture for the TradeDataHub Public API. The provider ships a v1 contract and a data
+  freshness signal, but publishes no changelog, no status page, no deprecation policy and no SLA.
+versioning:
+  scheme: major path version plus semantic contract version
+  path_prefix: /api/v1/
+  contract_version: 1.0.0
+  runtime_version_field: api_version
+  observed_runtime_version: '1.0.0'
+  policy_published: false
+  policy_url: null
+  note: >-
+    Version parity confirmed live — GET /api/v1/coverage returns api_version 1.0.0, matching
+    info.version in the published OpenAPI.
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: not observed
+  deprecation_header: not observed
+  rfc8594: false
+  deprecated_operations: []
+  note: >-
+    No operation in the OpenAPI carries deprecated: true, and no Sunset or Deprecation response header
+    was observed on any live probe. No deprecation policy page exists.
+status_page:
+  published: false
+  url: null
+  probes:
+    - url: https://www.tradedatahub.net/status/
+      http_status: 404
+  note: >-
+    No status page and no third-party status host (statuspage.io/instatus/betteruptime) is referenced
+    anywhere on the site, in llms.txt or in llms-full.txt.
+changelog:
+  published: false
+  url: null
+  probes:
+    - url: https://www.tradedatahub.net/changelog/
+      http_status: 404
+sla:
+  published: false
+  uptime_commitment: null
+  support_response_commitment: >-
+    "We respond to every email" — stated on the refund policy page, not an SLA.
+data_freshness:
+  signal: last_updated / last_verified_date
+  current_value: '2026-08-19'
+  observed_at:
+    - url: https://www.tradedatahub.net/api/v1/coverage
+      http_status: 200
+    - url: https://www.tradedatahub.net/llms.txt
+      http_status: 200
+      note: llms.txt carries a per-page "Data Freshness Signal" block with dated entries.
+  caveat: >-
+    Per llms-full.txt, verification dates describe source processing only — not licensing, active
+    business status, or consent to contact.
+support:
+  channel: email
+  contact: tradedatahub@gmail.com
+  page: https://www.tradedatahub.net/contact/
+entitlement_lifecycle:
+  download_link_validity: 24 hours
+  download_attempts: 5
+  refund_window: 7 days from purchase
+  source: https://www.tradedatahub.net/refunds/
+gaps:
+  - No status page, so an agent has no way to distinguish an outage from a bad request.
+  - No changelog, so a contract change to /api/v1/ would land unannounced.
+  - No deprecation policy or Sunset header, so v1 could be retired without a machine-readable warning.

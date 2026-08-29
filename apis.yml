@@ -1,4 +1,5 @@
 name: TradeDataHub Public API
+aid: tradedatahub
 description: >-
   A marketplace API for downloadable CSV datasets of verified U.S. contractor and trade-business listings. Offers a
   free, unauthenticated REST discovery API under /api/v1/ (coverage, states, trades, cities, datasets, previews,
@@ -42,6 +43,8 @@ apis:
     properties:
       - type: OpenAPI
         url: https://www.tradedatahub.net/openapi.json
+      - type: OpenAPI
+        url: openapi/tradedatahub-openapi.json
       - type: Documentation
         url: https://www.tradedatahub.net/developers/
       - type: LLMsTxt
@@ -49,10 +52,57 @@ apis:
       - type: LLMsTxt
         url: https://www.tradedatahub.net/llms-full.txt
 maintainers:
-  - FN: TradeDataHub Public API
+  - FN: TradeDataHub
+    email: tradedatahub@gmail.com
     url: https://www.tradedatahub.net/
 generated:
   by: apis.io/add
   model: claude-opus-4-8
   confidence: 95
   at: '2026-08-29T02:05:47.534Z'
+common:
+- type: DomainSecurity
+  url: security/tradedatahub-domain-security.yml
+- type: DeveloperPortal
+  url: https://www.tradedatahub.net/developers/
+- type: Support
+  url: https://www.tradedatahub.net/contact/
+- type: TermsOfService
+  url: https://www.tradedatahub.net/terms/
+- type: PrivacyPolicy
+  url: https://www.tradedatahub.net/privacy/
+- type: Pricing
+  url: https://www.tradedatahub.net/faq/
+- type: LLMsTxt
+  url: llms/tradedatahub-llms.txt
+- type: Plans
+  url: plans/tradedatahub-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/tradedatahub-rate-limits.yml
+- type: Authentication
+  url: authentication/tradedatahub-authentication.yml
+- type: ErrorCatalog
+  url: errors/tradedatahub-problem-types.yml
+- type: Conventions
+  url: conventions/tradedatahub-conventions.yml
+- type: Lifecycle
+  url: lifecycle/tradedatahub-lifecycle.yml
+- type: Conformance
+  url: conformance/tradedatahub-conformance.yml
+- type: DataModel
+  url: data-model/tradedatahub-data-model.yml
+- type: Sandbox
+  url: sandbox/tradedatahub-sandbox.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: Packages
+  url: packages/tradedatahub-packages.yml
+- type: Overlay
+  url: overlays/tradedatahub-openapi-overlay.yaml
+- type: Examples
+  url: examples/_index.yml
+x-enrichment:
+  date: '2026-08-29'
+  status: enriched
+  artifacts_added: 30
+  pass: local-v1

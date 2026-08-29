@@ -1,0 +1,37 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tradedatahub.net/api/v1/coverage
+docs: https://www.tradedatahub.net/developers/
+name: TradeDataHub rate limits
+description: >-
+  TradeDataHub publishes NO rate limits and returns no rate-limit signaling headers. This is a recorded
+  absence, verified by reading the full response headers of live anonymous calls to the free discovery
+  endpoints and to the paid retrieval endpoint on 2026-08-29.
+limits: []
+limit_count: 0
+response_headers:
+  ratelimit_limit: null
+  ratelimit_remaining: null
+  ratelimit_reset: null
+  retry_after: null
+  x_ratelimit_family: null
+  observed_on:
+    - url: https://www.tradedatahub.net/api/v1/coverage
+      http_status: 200
+      headers_present: [access-control-allow-origin, cache-control, cache-status, content-type, netlify-vary, server, strict-transport-security, vary, x-content-type-options, x-nf-request-id]
+    - url: https://www.tradedatahub.net/api/v1/datasets/state:california/download
+      http_status: 402
+      headers_present: [access-control-expose-headers, cache-control, payment-required, server, strict-transport-security, x-content-type-options, x-nf-request-id, x-robots-tag]
+exhaustion_status_code: null
+throttling_observed: false
+mitigations_in_place:
+  - control: pagination cap
+    detail: limit is clamped to a maximum of 100 datasets per page, which bounds a single response.
+  - control: edge caching
+    detail: cache-control public,max-age=60,stale-while-revalidate=30 absorbs repeated identical reads at the Netlify edge.
+  - control: paywall
+    detail: The only expensive resource (the CSV itself) sits behind x402/Stripe rather than a quota.
+gap: >-
+  An agent enumerating the full 8,588-product catalog has no published budget to plan against and no
+  runtime signal to back off on. Publishing even a soft limit plus RateLimit-* headers (RFC 9745 draft
+  shape) would let an agent pace itself instead of guessing.

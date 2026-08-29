@@ -1,0 +1,155 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/tradedatahub-openapi.json
+enriched_from: https://www.tradedatahub.net/llms-full.txt
+name: TradeDataHub data model
+description: >-
+  Entity graph derived from the 11 component schemas and the $ref / id-reference links in the
+  TradeDataHub OpenAPI 3.1.0 contract. The core is a product catalog: a Dataset is the purchasable
+  unit, addressed by a structured composite product_id built from State, City and Trade dimensions.
+entities:
+  - name: Coverage
+    schema: '#/components/schemas/Coverage'
+    role: singleton aggregate
+    key: null
+    fields: [api_version, record_count, live_states, trades, cities, product_count, currency, price_model, last_updated]
+    surfaced_by: GET /api/v1/coverage
+    note: Rollup of the whole catalog; the documented entry point for an agent.
+  - name: State
+    schema: '#/components/schemas/State'
+    role: dimension and purchasable product
+    key: product_id
+    key_format: 'state:{state_slug}'
+    fields: [product_id, state, record_count, amount_cents, price, currency, last_updated, available_for_purchase]
+    surfaced_by: GET /api/v1/states
+  - name: Trade
+    schema: '#/components/schemas/Trade'
+    role: dimension
+    key: trade
+    key_format: exact canonical trade name, e.g. "HVAC Contractor"
+    fields: [trade, record_count, product_count]
+    surfaced_by: GET /api/v1/trades
+    note: Has no product_id of its own — a trade is only purchasable in combination with a state or city.
+  - name: City
+    schema: '#/components/schemas/City'
+    role: dimension
+    key: [state, city]
+    fields: [state, city, record_count, trade_count]
+    surfaced_by: GET /api/v1/cities
+  - name: Dataset
+    schema: '#/components/schemas/Dataset'
+    role: the purchasable product — the central entity
+    key: product_id
+    key_formats:
+      - 'state:{state_slug}'
+      - 'state-trade:{state_slug}:{trade_slug}'
+      - 'city-trade:{state_slug}:{city_slug}:{trade_slug}'
+      - 'mega-pack:seven-live-states'
+    discriminator: product_type
+    discriminator_values: [city_trade, state_trade, state, mega_pack]
+    fields: [product_id, product_type, state, city, trade, record_count, amount_cents, price, currency, last_updated, available_for_purchase]
+    surfaced_by:
+      - GET /api/v1/datasets
+      - GET /api/v1/datasets/{product_id}
+  - name: Price
+    schema: '#/components/schemas/Price'
+    role: alias
+    aliases: Dataset
+    note: 'Price is a bare $ref to Dataset — the price endpoint returns the identical shape, confirmed live.'
+    surfaced_by: GET /api/v1/datasets/{product_id}/price
+  - name: Preview
+    schema: '#/components/schemas/Preview'
+    role: masked projection of a Dataset
+    key: product_id
+    fields: [api_version, product_id, classification, record_count, fields, records, notice]
+    surfaced_by: GET /api/v1/datasets/{product_id}/preview
+    availability: city_trade and state_trade products only
+  - name: PreviewRecord
+    schema: '#/components/schemas/PreviewRecord'
+    role: masked row inside a Preview
+    fields: [business, city, trade, phone_available, website_available, verification_date]
+    masking: >-
+      business is always the literal string "Masked business"; phone and website are reduced to
+      boolean presence flags. No paid contact value is ever returned.
+  - name: Pagination
+    schema: '#/components/schemas/Pagination'
+    role: envelope fragment
+    fields: [total, limit, offset]
+  - name: Error
+    schema: '#/components/schemas/Error'
+    role: error envelope
+    fields: [api_version, error.code, error.message, error.details]
+  - name: PaymentRequired
+    schema: '#/components/schemas/PaymentRequired'
+    role: HTTP 402 x402 challenge envelope
+    fields: [api_version, error, payment_required]
+    note: Server-generated per request; the provider instructs clients never to hardcode it.
+relationships:
+  - from: Coverage
+    to: State
+    type: has_many
+    via: aggregate count (live_states)
+  - from: Coverage
+    to: Trade
+    type: has_many
+    via: aggregate count (trades)
+  - from: Coverage
+    to: City
+    type: has_many
+    via: aggregate count (cities)
+  - from: Coverage
+    to: Dataset
+    type: has_many
+    via: aggregate count (product_count)
+  - from: City
+    to: State
+    type: belongs_to
+    via: state field (exact canonical state name)
+  - from: Dataset
+    to: State
+    type: belongs_to
+    via: state field, and the state_slug segment of product_id
+  - from: Dataset
+    to: City
+    type: belongs_to
+    via: city field, and the city_slug segment of product_id (city_trade products only)
+  - from: Dataset
+    to: Trade
+    type: belongs_to
+    via: trade field, and the trade_slug segment of product_id (city_trade and state_trade products only)
+  - from: State
+    to: Dataset
+    type: has_one
+    via: product_id — a State is itself a purchasable Dataset of product_type state
+  - from: Dataset
+    to: Price
+    type: has_one
+    via: '/price subresource ($ref to Dataset)'
+  - from: Dataset
+    to: Preview
+    type: has_one
+    via: '/preview subresource; only for city_trade and state_trade'
+  - from: Preview
+    to: PreviewRecord
+    type: has_many
+    via: records[]
+  - from: Dataset
+    to: PaymentRequired
+    type: has_one
+    via: '/download subresource returns this envelope when unpaid'
+id_conventions:
+  separator: ':'
+  slug_case: lowercase-kebab
+  composite: true
+  guidance: >-
+    llms-full.txt instructs clients to always take product_id values from API responses rather than
+    constructing them ad hoc, even though the formats are documented.
+purchased_record_fields:
+  present: [Name, Phone, Website, Address, Category, City, State, last_verified_date]
+  absent: [Email, authoritative license fields]
+  source: https://www.tradedatahub.net/llms-full.txt
+  note: >-
+    These are the CSV columns a buyer receives. They are NOT exposed by any API schema — the API
+    describes availability only.
+entity_count: 11
+relationship_count: 13

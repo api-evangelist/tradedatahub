@@ -1,0 +1,56 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tradedatahub.net/.well-known/
+name: TradeDataHub well-known probe
+description: >-
+  Probe of the RFC 8615 /.well-known/ namespace on the single TradeDataHub API/web host.
+  Every path returned HTTP 404 answered by the site's HTML 404 page (Netlify static hosting),
+  so NO well-known document is served. No WellKnown or SecurityTxt pointer is emitted in
+  apis.yml — this file records a verified absence, not a presence.
+hosts:
+  - host: www.tradedatahub.net
+    note: >-
+      Sole host. It serves the marketing site, the developer docs, the OpenAPI, llms.txt and
+      the /api/v1/ REST surface. 404 responses are text/html (the site 404 page), not JSON.
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/mcp.json
+        status: 404
+        file: null
+      - path: /.well-known/apis.json
+        status: 404
+        file: null
+summary:
+  hosts_probed: 1
+  documents_probed: 10
+  documents_served: 0
+gap:
+  - >-
+    A /.well-known/security.txt (RFC 9116) naming tradedatahub@gmail.com as the security contact
+    would be a two-line file and is the cheapest missing agent/security surface here.
+  - >-
+    A /.well-known/api-catalog (RFC 9727) pointing at /openapi.json would make the contract
+    discoverable without reading the developer page.

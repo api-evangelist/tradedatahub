@@ -1,0 +1,85 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tradedatahub.net/api/v1/coverage
+also_sourced_from:
+  - https://www.tradedatahub.net/llms.txt
+  - https://www.tradedatahub.net/developers/
+  - https://www.tradedatahub.net/api/v1/states
+name: TradeDataHub pricing
+description: >-
+  TradeDataHub sells one-time downloadable CSV datasets, not API subscriptions. There is no tiered API
+  plan, no free/pro/enterprise ladder, and no metered API pricing — the discovery API itself is free and
+  unauthenticated, and the money is in the dataset artifact. Prices below were read from the provider's
+  own machine-readable pricing endpoints, not from a marketing page.
+model: one-time purchase per dataset (no subscription)
+currency: USD
+pricing_endpoint: https://www.tradedatahub.net/api/v1/datasets/{product_id}/price
+catalog_endpoint: https://www.tradedatahub.net/api/v1/datasets
+api_access_pricing:
+  discovery_api: free, unauthenticated, no plan required
+  paid_retrieval: per-dataset price settled over x402 (Base Sepolia TESTNET only) or Stripe (human)
+  subscription_tiers: 0
+plans:
+  - name: City + trade CSV
+    product_type: city_trade
+    price: 9.99
+    amount_cents: 999
+    currency: USD
+    billing_period: one-time
+    included: One CSV covering a single city and single trade
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/datasets?state=Texas&trade=Roofer&limit=3
+      http_status: 200
+  - name: State + trade CSV
+    product_type: state_trade
+    price: null
+    amount_cents: null
+    currency: USD
+    billing_period: one-time
+    included: One CSV covering a single state and single trade
+    note: >-
+      Price varies by dataset and is not a single published figure. llms-full.txt shows
+      state-trade:florida:appliance-repair-technician at $19.00; the authoritative value is the
+      per-product /price endpoint.
+  - name: State CSV
+    product_type: state
+    price: 29.99
+    amount_cents: 2999
+    currency: USD
+    billing_period: one-time
+    included: One CSV covering an entire live state
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/states
+      http_status: 200
+  - name: Seven-state pack
+    product_type: mega_pack
+    product_id: mega-pack:seven-live-states
+    price: 99.00
+    amount_cents: 9900
+    currency: USD
+    billing_period: one-time
+    included: All 7 live states — 33,753 records
+    evidence:
+      url: https://www.tradedatahub.net/llms.txt
+      http_status: 200
+plan_count: 4
+purchase_paths:
+  - path: Stripe Checkout
+    audience: human
+    note: One-time checkout on each product page; delivers a signed link valid 24 hours, 5 downloads.
+  - path: x402
+    audience: agent
+    network: Base Sepolia (eip155:84532)
+    asset: testnet USDC
+    status: TESTNET ONLY — mainnet settlement not enabled
+    note: >-
+      Probed 2026-08-29: an unpaid GET on the download endpoint returns HTTP 402 with a live x402 v2
+      challenge quoting amount 29990000 (testnet USDC base units) for state:california.
+coverage_at_capture:
+  record_count: 33753
+  live_states: 7
+  trades: 50
+  cities: 170
+  product_count: 8588
+  last_updated: '2026-08-19'
+  source: https://www.tradedatahub.net/api/v1/coverage

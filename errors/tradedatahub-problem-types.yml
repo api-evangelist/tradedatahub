@@ -1,0 +1,106 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/tradedatahub-openapi.json
+enriched_from:
+  - https://www.tradedatahub.net/developers/
+  - live probes of www.tradedatahub.net/api/v1/ (2026-08-29)
+name: TradeDataHub error catalog
+description: >-
+  Error surface derived from the 4xx responses declared in the TradeDataHub OpenAPI 3.1.0 contract and
+  confirmed against live anonymous probes. The API does NOT use RFC 9457 application/problem+json; it
+  uses a proprietary JSON envelope of {api_version, error:{code, message}} served as application/json.
+format: proprietary-json
+rfc9457: false
+envelope:
+  media_type: application/json
+  shape:
+    api_version: string — the API version that produced the response, e.g. "1.0.0"
+    error.code: string — machine-readable snake_case error code
+    error.message: string — human-readable explanation
+  schema_ref: '#/components/schemas/Error'
+  note: >-
+    The 402 response uses a DIFFERENT, richer envelope — {api_version, error{code,message},
+    payment_required{...x402 challenge...}} — described by '#/components/schemas/PaymentRequired'.
+problem_types:
+  - code: dataset_not_found
+    status: 404
+    title: Dataset not found
+    detail: No dataset exists with the supplied product_id.
+    operations:
+      - GET /api/v1/datasets/{product_id}
+      - GET /api/v1/datasets/{product_id}/price
+      - GET /api/v1/datasets/{product_id}/preview
+      - GET /api/v1/datasets/{product_id}/download
+    remediation: >-
+      Take product_id values from GET /api/v1/datasets rather than constructing them; the documented
+      forms are state:{slug}, state-trade:{state}:{trade}, city-trade:{state}:{city}:{trade} and
+      mega-pack:seven-live-states.
+    method: probed
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/datasets/does-not-exist-xyz
+      http_status: 404
+      body: '{"api_version":"1.0.0","error":{"code":"dataset_not_found","message":"No dataset with product_id: does-not-exist-xyz"}}'
+  - code: preview_unavailable
+    status: 200
+    title: Masked preview not available for this product type
+    detail: >-
+      Masked previews exist only for city_trade and state_trade products. Requesting a preview for a
+      state or mega_pack product returns the error envelope with HTTP 200, not a 4xx.
+    operations:
+      - GET /api/v1/datasets/{product_id}/preview
+    remediation: Request a preview only for city_trade or state_trade product_ids.
+    method: probed
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/datasets/state:california/preview
+      http_status: 200
+      body: '{"api_version":"1.0.0","error":{"code":"preview_unavailable","message":"Masked previews are available only for city/trade and state/trade datasets."}}'
+    divergence: >-
+      An error-shaped body returned under HTTP 200 is invisible to a client that branches on status
+      code alone. The spec declares only 200 and 404 for this operation.
+  - code: payment_required
+    status: 402
+    title: Payment required (x402 TESTNET)
+    detail: >-
+      The paid retrieval endpoint was called without a PAYMENT-SIGNATURE header. The response carries
+      the live x402 v2 challenge both as a base64 Payment-Required header and as a payment_required
+      object in the body.
+    operations:
+      - GET /api/v1/datasets/{product_id}/download
+    remediation: >-
+      Read the challenge from the response (never hardcode it), settle on Base Sepolia
+      (eip155:84532) with testnet USDC, and retry with PAYMENT-SIGNATURE. Mainnet settlement is not enabled.
+    method: probed
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/datasets/state:california/download
+      http_status: 402
+      headers_seen:
+        - payment-required (base64 x402 v2 challenge)
+        - access-control-expose-headers: Payment-Required, Payment-Response
+        - x-robots-tag: noindex, nofollow, noarchive
+  - code: null
+    status: 400
+    title: Invalid limit/offset
+    detail: Declared in the OpenAPI for GET /api/v1/datasets; no code string is documented.
+    operations:
+      - GET /api/v1/datasets
+    remediation: Keep limit between 1 and 100 and offset >= 0.
+    method: derived
+    divergence: >-
+      Not reproducible. A live GET /api/v1/datasets?limit=9999 returned HTTP 200 with limit silently
+      clamped to 100 rather than the documented 400. Probed 2026-08-29.
+  - code: null
+    status: 404
+    title: State not found
+    detail: Declared in the OpenAPI for GET /api/v1/cities when the ?state= filter matches nothing.
+    operations:
+      - GET /api/v1/cities
+    remediation: Use exact state names from GET /api/v1/states.
+    method: probed
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/cities?state=Nowhere
+      http_status: 404
+error_count: 5
+status_codes_declared: [200, 400, 402, 404, 409]
+note: >-
+  HTTP 409 is declared on the download operation in the OpenAPI but carries no documented code string
+  and was not reproducible anonymously — recorded here as declared-only, not fabricated into a type.

@@ -1,0 +1,134 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/tradedatahub-openapi.json
+enriched_from:
+  - https://www.tradedatahub.net/developers/
+  - https://www.tradedatahub.net/terms/
+  - https://www.tradedatahub.net/privacy/
+  - live probes of www.tradedatahub.net 2026-08-29
+name: TradeDataHub standards conformance
+description: >-
+  Standards and cross-cutting conventions asserted against the TradeDataHub Public API, each with the
+  evidence that supports or refutes it. Absence is recorded as conforms:false rather than omitted.
+conformance:
+  - id: openapi-3.1
+    conforms: true
+    evidence:
+      location: openapi/tradedatahub-openapi.json (info/openapi)
+      detail: 'openapi: "3.1.0" with 11 documented GET operations across 3 tags and 11 component schemas.'
+      url: https://www.tradedatahub.net/openapi.json
+      http_status: 200
+  - id: llmstxt
+    conforms: true
+    evidence:
+      location: https://www.tradedatahub.net/llms.txt
+      detail: >-
+        Served as text/plain, follows the llms.txt convention (H1 title, blockquote summary, H2
+        sections of linked resources). A companion llms-full.txt is also served.
+      http_status: 200
+  - id: x402
+    conforms: true
+    version: 2
+    evidence:
+      location: GET /api/v1/datasets/{product_id}/download
+      detail: >-
+        An unpaid request returns HTTP 402 carrying a base64 Payment-Required header and a body
+        payment_required object with x402Version 2, accepts[] {scheme exact, network eip155:84532,
+        amount, asset, payTo, maxTimeoutSeconds}, and extensions{}. Probed anonymously without paying.
+      url: https://www.tradedatahub.net/api/v1/datasets/state:california/download
+      http_status: 402
+    caveat: >-
+      TESTNET ONLY. Network is Base Sepolia (eip155:84532) with testnet USDC; the provider states
+      mainnet settlement is NOT enabled. This is a real x402 implementation but not production commerce.
+  - id: rfc9457
+    conforms: false
+    evidence:
+      location: components.schemas.Error
+      detail: >-
+        Errors use a proprietary {api_version, error:{code,message}} envelope served as
+        application/json. No application/problem+json media type and no type/title/status/detail members.
+  - id: pagination
+    conforms: true
+    evidence:
+      location: GET /api/v1/datasets, GET /api/v1/cities
+      detail: >-
+        limit/offset query parameters (limit 1..100, default 100; offset >= 0) with a pagination
+        object {total, limit, offset} in every list response. Verified live.
+    caveat: >-
+      The declared 400 for an out-of-range limit does not fire — limit=9999 returned HTTP 200 with
+      limit clamped to 100.
+  - id: idempotency
+    conforms: na
+    evidence:
+      location: openapi/tradedatahub-openapi.json (paths)
+      detail: >-
+        All 11 operations are GET and therefore idempotent by HTTP semantics. There is no unsafe write
+        surface, so an Idempotency-Key mechanism has nothing to protect.
+  - id: oauth2
+    conforms: false
+    evidence:
+      location: components.securitySchemes
+      detail: >-
+        No securitySchemes are declared at all. /.well-known/oauth-authorization-server and
+        /.well-known/oauth-protected-resource both returned 404.
+  - id: oidc
+    conforms: false
+    evidence:
+      location: /.well-known/openid-configuration
+      detail: Returned HTTP 404 (site HTML 404 page).
+  - id: cors
+    conforms: true
+    evidence:
+      location: live response headers
+      detail: >-
+        access-control-allow-origin *, allow-methods GET/HEAD/OPTIONS, allow-headers including
+        Payment-Signature, expose-headers Payment-Required and Payment-Response. Browser and agent
+        clients can call the discovery API cross-origin without a proxy.
+      url: https://www.tradedatahub.net/api/v1/coverage
+      http_status: 200
+  - id: hsts
+    conforms: true
+    evidence:
+      location: live response headers
+      detail: strict-transport-security max-age=31536000 on TLSv1.3.
+  - id: rfc9116-securitytxt
+    conforms: false
+    evidence:
+      location: /.well-known/security.txt
+      detail: Returned HTTP 404.
+  - id: rfc9727-api-catalog
+    conforms: false
+    evidence:
+      location: /.well-known/api-catalog
+      detail: Returned HTTP 404.
+  - id: asyncapi
+    conforms: false
+    evidence:
+      location: repo + provider docs
+      detail: >-
+        No event, streaming or webhook surface exists. The catalog is a static, dated snapshot
+        (last_updated 2026-08-19) polled over REST. Not penalised — there is nothing to describe.
+domain_standard:
+  market: US B2B contractor / trade-business firmographic data
+  standard_declared: false
+  evidence:
+    location: openapi/tradedatahub-openapi.json + https://www.tradedatahub.net/data-quality/
+    detail: >-
+      The contract declares no domain data standard for its market. Record fields (Name, Phone,
+      Website, Address, Category, City, State, last_verified_date) are bespoke; trade categories and
+      product_id slugs are a TradeDataHub-local vocabulary. No NAICS/SIC code, no schema.org
+      LocalBusiness typing, no DUNS/LEI identifier scheme, and no OpenReferral or comparable business-
+      directory standard appears anywhere in the spec, the API responses or the data-quality page.
+  penalty: none
+  note: >-
+    REWARD-ONLY dimension. Recorded as absent, not invented. The nearest applicable standards would be
+    schema.org/LocalBusiness typing on records or NAICS classification of the trade taxonomy; neither
+    is claimed by the provider and neither is asserted here.
+compliance:
+  certifications_published: []
+  trust_center: false
+  note: >-
+    No SOC 2, ISO 27001, PCI, HIPAA or comparable certification is claimed anywhere on the site.
+    probe-security-programs.py returned vdp=none trust=none. The terms and privacy pages place
+    compliance obligations (TCPA, CAN-SPAM, state privacy laws) on the BUYER, and explicitly state
+    that inclusion in a dataset is not consent to be contacted.

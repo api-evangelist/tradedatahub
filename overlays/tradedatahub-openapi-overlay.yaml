@@ -1,0 +1,121 @@
+overlay: 1.0.0
+info:
+  title: TradeDataHub Public API — API Evangelist enhancement overlay
+  version: 1.0.0
+extends: openapi/tradedatahub-openapi.json
+x-provenance:
+  generated: '2026-08-29'
+  method: generated
+  source: openapi/tradedatahub-openapi.json
+  note: >-
+    Captures API Evangelist enhancements to the provider's OpenAPI without mutating it. Every value
+    below is either a mechanical addition (operationIds synthesised from method+path) or a fact
+    verified by live probe on 2026-08-29 — no behaviour is invented. The provider's spec declares no
+    operationIds at all, which is the largest single generation-blocker in the contract.
+actions:
+  - target: $.info
+    description: Record the observed runtime contract version and the agent-facing discovery entry points.
+    update:
+      x-runtime-version-field: api_version
+      x-observed-runtime-version: '1.0.0'
+      x-agent-entry-points:
+        - https://www.tradedatahub.net/llms.txt
+        - https://www.tradedatahub.net/llms-full.txt
+        - https://www.tradedatahub.net/api/v1/coverage
+      x-contact-email: tradedatahub@gmail.com
+  - target: $.info
+    description: Note the absence of a machine-readable security scheme for the paid rail.
+    update:
+      x-auth-gap: >-
+        The paid retrieval endpoint requires a PAYMENT-SIGNATURE request header (x402 v2), but the
+        contract declares no securitySchemes, so a generated client cannot discover it.
+  - target: $.paths['/api/v1/'].get
+    description: Add a stable operationId.
+    update:
+      operationId: getApiIndex
+  - target: $.paths['/api/v1/texas-trades-teaser.json'].get
+    description: Add a stable operationId.
+    update:
+      operationId: getTexasTradesTeaser
+  - target: $.paths['/api/v1/coverage'].get
+    description: Add a stable operationId and mark the documented starting point.
+    update:
+      operationId: getCoverage
+      x-entry-point: true
+  - target: $.paths['/api/v1/states'].get
+    description: Add a stable operationId.
+    update:
+      operationId: listStates
+  - target: $.paths['/api/v1/trades'].get
+    description: Add a stable operationId.
+    update:
+      operationId: listTrades
+  - target: $.paths['/api/v1/cities'].get
+    description: Add a stable operationId.
+    update:
+      operationId: listCities
+  - target: $.paths['/api/v1/datasets'].get
+    description: Add a stable operationId and record the observed limit-clamping behaviour.
+    update:
+      operationId: listDatasets
+      x-pagination:
+        style: limit-offset
+        total_field: pagination.total
+      x-observed-divergence: >-
+        limit=9999 returned HTTP 200 with limit silently clamped to 100, not the declared 400.
+        Probed 2026-08-29.
+  - target: $.paths['/api/v1/datasets/{product_id}'].get
+    description: Add a stable operationId and document the product_id grammar.
+    update:
+      operationId: getDataset
+      x-id-formats:
+        - 'state:{state_slug}'
+        - 'state-trade:{state_slug}:{trade_slug}'
+        - 'city-trade:{state_slug}:{city_slug}:{trade_slug}'
+        - 'mega-pack:seven-live-states'
+  - target: $.paths['/api/v1/datasets/{product_id}/price'].get
+    description: Add a stable operationId.
+    update:
+      operationId: getDatasetPrice
+  - target: $.paths['/api/v1/datasets/{product_id}/preview'].get
+    description: Add a stable operationId and record that an error body can arrive under HTTP 200.
+    update:
+      operationId: getDatasetPreview
+      x-availability: city_trade and state_trade products only
+      x-observed-divergence: >-
+        Requesting a preview for a state or mega_pack product returns the error envelope
+        {error.code preview_unavailable} under HTTP 200, not a 4xx. Probed 2026-08-29.
+  - target: $.paths['/api/v1/datasets/{product_id}/download'].get
+    description: Add a stable operationId and make the x402 contract and its irreversibility explicit.
+    update:
+      operationId: downloadDataset
+      x-payment:
+        protocol: x402
+        version: 2
+        header: PAYMENT-SIGNATURE
+        network: 'eip155:84532'
+        network_name: Base Sepolia
+        asset: USDC (testnet)
+        mainnet_settlement_enabled: false
+        challenge_inspectable_without_payment: true
+      x-reversibility:
+        api_reversal_operation: null
+        out_of_band_reversal: Email tradedatahub@gmail.com with the Stripe session id (cs_ prefix).
+        window: 7 days from purchase
+        window_source: https://www.tradedatahub.net/refunds/
+        grade: documented
+      x-delivery:
+        format: text/csv
+        link_validity_hours: 24
+        max_downloads: 5
+  - target: $.components
+    description: Declare the payment header as a discoverable security scheme.
+    update:
+      securitySchemes:
+        x402PaymentSignature:
+          type: apiKey
+          in: header
+          name: PAYMENT-SIGNATURE
+          description: >-
+            x402 v2 payment signature. Obtain the challenge from the HTTP 402 response, settle on Base
+            Sepolia (eip155:84532) with testnet USDC, then retry with this header. TESTNET ONLY.

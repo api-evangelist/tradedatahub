@@ -1,0 +1,145 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.tradedatahub.net/developers/
+also_derived_from:
+  - openapi/tradedatahub-openapi.json
+  - https://www.tradedatahub.net/llms-full.txt
+  - live response headers observed on www.tradedatahub.net 2026-08-29
+name: TradeDataHub API conventions
+description: >-
+  Cross-cutting runtime semantics for the TradeDataHub Public API — a read-only REST discovery surface
+  under /api/v1/ plus one paid retrieval endpoint gated by x402. All eleven operations are GET.
+authentication:
+  style: none on discovery; x402 PAYMENT-SIGNATURE header on paid retrieval
+  detail: See authentication/tradedatahub-authentication.yml
+  self_serve_keys: false
+versioning:
+  style: path-prefix plus in-body version field
+  path_prefix: /api/v1/
+  body_field: api_version
+  observed_value: '1.0.0'
+  spec_version: 1.0.0
+  media_type_versioning: false
+  header_versioning: false
+  note: >-
+    Every JSON response echoes api_version, so a client can detect a version change without parsing
+    the URL. The paid 402 body uses api_version: 2 (an integer) referring to the x402 protocol
+    version, not the TradeDataHub API version — a genuine ambiguity in the envelope.
+pagination:
+  style: limit-offset
+  params:
+    limit: integer, 1..100, default 100
+    offset: integer, >=0, default 0
+  response_field: pagination
+  response_shape:
+    total: total matching records across all pages
+    limit: effective page size
+    offset: current offset
+  applies_to:
+    - GET /api/v1/cities
+    - GET /api/v1/datasets
+  termination: Page with offset until offset >= pagination.total.
+  clamping: >-
+    A limit above 100 is silently clamped to 100 and returns HTTP 200 (probed with limit=9999),
+    even though the OpenAPI declares a 400 for invalid limit/offset.
+filtering:
+  params:
+    state: exact canonical state name, e.g. Texas
+    trade: exact canonical trade name, e.g. HVAC Contractor
+    city: exact canonical city name
+    type: enum city_trade | state_trade | state | mega_pack
+  matching: exact string, case-sensitive; no fuzzy or partial matching documented
+  discovery: Canonical values come from /api/v1/states, /api/v1/trades and /api/v1/cities.
+  unmatched_filter: Returns HTTP 200 with an empty datasets[] and pagination.total 0 (probed).
+field_expansion:
+  supported: false
+sparse_fieldsets:
+  supported: false
+metadata:
+  supported: false
+request_id_tracing:
+  provider_header: x-nf-request-id
+  note: >-
+    Emitted by Netlify (the hosting edge), not by TradeDataHub application code, and not documented.
+    There is no documented correlation-id request header a client can supply.
+caching:
+  cache_control: public,max-age=60,stale-while-revalidate=30
+  edge: Netlify Edge / Netlify Durable (cache-status header observed)
+  etag: not observed
+  conditional_requests: not documented
+error_envelope:
+  shape: '{api_version, error:{code, message}}'
+  media_type: application/json
+  rfc9457: false
+  detail: See errors/tradedatahub-problem-types.yml
+rate_limit_signaling:
+  headers: none
+  note: >-
+    No X-RateLimit-*, RateLimit-* or Retry-After header was present on any observed response, and no
+    limits are published. See rate-limits/tradedatahub-rate-limits.yml.
+idempotency:
+  supported: na
+  reason: >-
+    Every operation in the contract is a GET and is therefore idempotent by HTTP semantics. There is
+    no POST/PUT/PATCH/DELETE surface, no Idempotency-Key header, and nothing for an idempotency key
+    to protect. Recorded as na rather than absent — this API has no unsafe write to double-fire.
+  header: null
+dry_run_mode:
+  supported: na
+  reason: >-
+    No write surface to rehearse. The closest analogue is the free masked /preview endpoint, which
+    lets an agent inspect record availability and field presence before paying, and the 402 challenge,
+    which an agent may inspect without settling any payment.
+  related:
+    - GET /api/v1/datasets/{product_id}/preview
+    - GET /api/v1/datasets/{product_id}/price
+    - GET /api/v1/datasets/{product_id}/download (returns the 402 challenge unpaid)
+reversibility:
+  grade: documented
+  applies_to: dataset purchase (both the Stripe human path and the x402 testnet agent path)
+  api_reversal_operation: null
+  summary: >-
+    TradeDataHub publishes a refund and correction policy with an explicit request window, but there is
+    NO programmatic reversal: no cancel, refund, void or reverse operation exists anywhere in the
+    OpenAPI, and no API-callable path can undo a purchase. Reversal is an out-of-band human process
+    over email. Graded `documented` rather than `verified` for exactly that reason — the window is
+    stated, but an agent cannot act on it.
+  surfaces:
+    - surface: Dataset purchase (Stripe checkout, human path)
+      reversal: Refund or file correction, requested by email to tradedatahub@gmail.com with the
+        Stripe Checkout session id (prefix cs_).
+      window: 7 days from purchase
+      window_stated_at: https://www.tradedatahub.net/refunds/
+      operation_id: null
+      eligibility:
+        - duplicate charge for the same product
+        - materially incorrect or mismatched dataset (wrong state, city, trade, or materially different record count)
+        - corrupted or otherwise unusable delivered file
+        - inability to access the purchased dataset that TradeDataHub cannot reasonably resolve
+      not_covered:
+        - successful delivery or download followed only by a change of mind
+        - business outcomes from outreach using the data
+        - record changes occurring naturally after the disclosed verification date
+    - surface: x402 paid retrieval (/api/v1/datasets/{product_id}/download)
+      reversal: null
+      window: null
+      note: >-
+        No reversal path is published for the x402 rail. The rail is TESTNET ONLY (Base Sepolia,
+        eip155:84532) with mainnet settlement not enabled, so no real value is at risk today; if
+        mainnet is ever enabled this becomes an unaddressed gap.
+  gap: >-
+    The 7-day refund window is stated in prose on a human page and reachable only by email. Exposing
+    it as an x-reversibility extension on the download operation, or a machine-readable refund request
+    endpoint, would move this from documented to verified.
+delivery:
+  purchased_artifact: one CSV file per product, UTF-8, one row per business record
+  download_link: signed, time-limited
+  link_validity: 24 hours
+  download_attempts: up to 5
+  stated_at: https://www.tradedatahub.net/refunds/
+data_fields:
+  present: [Name, Phone, Website, Address, Category, City, State, last_verified_date]
+  absent: [Email, authoritative license fields]
+  caveat: >-
+    Per llms-full.txt, counts describe field presence only — not licensing, active business status, or
+    consent to contact.

@@ -1,0 +1,67 @@
+# TradeDataHub US Data Catalog
+> Marketplace for contractor and trade-business datasets. Current protected coverage: 33,753 records across 7 live states.
+
+## Platform
+- Canonical site: https://www.tradedatahub.net/
+- Data quality and limitations: https://www.tradedatahub.net/data-quality/
+- Buyer questions: https://www.tradedatahub.net/faq/
+- Developer resources: https://www.tradedatahub.net/developers/
+- Terms of service: https://www.tradedatahub.net/terms/
+- Privacy policy: https://www.tradedatahub.net/privacy/
+- Contact and support: https://www.tradedatahub.net/contact/
+- Paid contact records, entitlements, tokens, and customer data are not exposed in discovery files.
+
+## Current pricing
+- City and trade CSV: $9.99
+- State CSV: $29.99
+- Seven-state pack: $99.00
+
+## High-Value Data Pages
+- Florida Asphalt Contractor Leads (40): /leads/florida/tampa-asphalt-contractors.html
+- Florida Auto Mechanic Leads (40): /leads/florida/cape-coral-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/clearwater-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/coral-springs-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/fort-lauderdale-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/gainesville-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/hialeah-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/hollywood-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/miami-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/miramar-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/orlando-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/palm-bay-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/pembroke-pines-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/pompano-beach-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/st-petersburg-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/tallahassee-auto-mechanics.html
+- Florida Auto Mechanic Leads (40): /leads/florida/tampa-auto-mechanics.html
+- Florida Cabinet Maker Leads (40): /leads/florida/clearwater-cabinet-makers.html
+- Florida Cabinet Maker Leads (40): /leads/florida/hialeah-cabinet-makers.html
+- Florida Cabinet Maker Leads (40): /leads/florida/hollywood-cabinet-makers.html
+
+## Public API
+- Free discovery endpoints: https://www.tradedatahub.net/api/v1/coverage, /states, /trades, /cities, /datasets, /datasets/{product_id}, /datasets/{product_id}/preview, /datasets/{product_id}/price
+- Masked teaser: https://www.tradedatahub.net/api/v1/texas-trades-teaser.json
+- OpenAPI: https://www.tradedatahub.net/openapi.json
+- Paid x402 agent retrieval is TESTNET ONLY (Base Sepolia eip155:84532); unpaid requests receive HTTP 402 with the challenge; mainnet settlement is NOT enabled.
+
+## Data Freshness Signal
+- /leads/florida/tampa-asphalt-contractors.html: 2026-08-19
+- /leads/florida/cape-coral-auto-mechanics.html: 2026-08-19
+- /leads/florida/clearwater-auto-mechanics.html: 2026-08-19
+- /leads/florida/coral-springs-auto-mechanics.html: 2026-08-19
+- /leads/florida/fort-lauderdale-auto-mechanics.html: 2026-08-19
+- /leads/florida/gainesville-auto-mechanics.html: 2026-08-19
+- /leads/florida/hialeah-auto-mechanics.html: 2026-08-19
+- /leads/florida/hollywood-auto-mechanics.html: 2026-08-19
+- /leads/florida/miami-auto-mechanics.html: 2026-08-19
+- /leads/florida/miramar-auto-mechanics.html: 2026-08-19
+- /leads/florida/orlando-auto-mechanics.html: 2026-08-19
+- /leads/florida/palm-bay-auto-mechanics.html: 2026-08-19
+- /leads/florida/pembroke-pines-auto-mechanics.html: 2026-08-19
+- /leads/florida/pompano-beach-auto-mechanics.html: 2026-08-19
+- /leads/florida/st-petersburg-auto-mechanics.html: 2026-08-19
+- /leads/florida/tallahassee-auto-mechanics.html: 2026-08-19
+- /leads/florida/tampa-auto-mechanics.html: 2026-08-19
+- /leads/florida/clearwater-cabinet-makers.html: 2026-08-19
+- /leads/florida/hialeah-cabinet-makers.html: 2026-08-19
+- /leads/florida/hollywood-cabinet-makers.html: 2026-08-19

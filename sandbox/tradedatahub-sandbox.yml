@@ -1,0 +1,84 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tradedatahub.net/developers/
+also_sourced_from: https://www.tradedatahub.net/llms-full.txt
+name: TradeDataHub sandbox and test surface
+description: >-
+  TradeDataHub does not run a conventional sandbox environment with test keys. What it does publish is
+  unusual and stronger for agents: the ENTIRE paid rail is currently a test rail. x402 retrieval runs
+  on Base Sepolia testnet with testnet USDC and mainnet settlement explicitly disabled, so an agent can
+  exercise the full discover-price-preview-challenge-settle loop against live production data without
+  spending real money. All values below are published by the provider or read from a live response.
+test_environment:
+  separate_host: false
+  note: >-
+    There is no sandbox.tradedatahub.net. Discovery and paid retrieval share the single production
+    host www.tradedatahub.net.
+key_prefixes:
+  test: null
+  live: null
+  note: >-
+    No API keys exist at all. Discovery is unauthenticated; paid retrieval is gated by an x402
+    PAYMENT-SIGNATURE header, not a key.
+x402_test_rail:
+  status: TESTNET ONLY
+  network: Base Sepolia
+  chain_id: 'eip155:84532'
+  asset_symbol: USDC
+  asset_contract: '0x036CbD53842c5426634e7929541eC2318f3dCF7e'
+  scheme: exact
+  x402_version: 2
+  max_timeout_seconds: 60
+  mainnet_settlement_enabled: false
+  challenge_inspection: >-
+    The provider states explicitly that agents may inspect the HTTP 402 Payment-Required challenge
+    without making any payment. Verified — probed anonymously, no payment made.
+  observed:
+    url: https://www.tradedatahub.net/api/v1/datasets/state:california/download
+    http_status: 402
+    amount_base_units: '29990000'
+    resource_url: https://www.tradedatahub.net/api/v1/datasets/state%3Acalifornia?format=csv&dataset_version=1.0.0
+    mime_type: text/csv
+    service_name: TradeDataHub
+  caution: >-
+    The payTo address and amount are generated per request. The provider instructs clients never to
+    hardcode the challenge. The address observed on 2026-08-29 is recorded above only as evidence of
+    the probe, not as a value to reuse.
+free_rehearsal_surface:
+  description: >-
+    Everything an agent needs to rehearse a purchase decision is free and unauthenticated.
+  endpoints:
+    - url: https://www.tradedatahub.net/api/v1/coverage
+      purpose: totals, currency, price model — the documented starting point
+      http_status: 200
+    - url: https://www.tradedatahub.net/api/v1/datasets/{product_id}/price
+      purpose: authoritative price before committing
+    - url: https://www.tradedatahub.net/api/v1/datasets/{product_id}/preview
+      purpose: masked availability preview — field presence, no paid contact values
+    - url: https://www.tradedatahub.net/api/v1/texas-trades-teaser.json
+      purpose: browser-safe masked teaser sample
+      http_status: 200
+published_test_identifiers:
+  - id: 'state:california'
+    type: state
+    published_at: https://www.tradedatahub.net/llms-full.txt
+    note: Provider-published representative example — records 1,000, price $29.99.
+  - id: 'state-trade:florida:appliance-repair-technician'
+    type: state_trade
+    published_at: https://www.tradedatahub.net/llms-full.txt
+    note: Provider-published representative example — records 434, price $19.00.
+  - id: 'city-trade:california:anaheim:appliance-repair-technician'
+    type: city_trade
+    published_at: https://www.tradedatahub.net/llms-full.txt
+    note: Provider-published representative example — records 1, price $9.99.
+  - id: 'mega-pack:seven-live-states'
+    type: mega_pack
+    published_at: https://www.tradedatahub.net/llms-full.txt
+    note: Provider-published representative example — records 33,753, price $99.00.
+test_cards: []
+test_clocks: false
+fixtures: false
+gap: >-
+  Because the test rail IS the production rail, there is no way to rehearse a MAINNET x402 settlement,
+  and no test path at all for the Stripe human checkout. If mainnet is enabled later, a separate
+  testnet product or a sandbox mode will be needed.

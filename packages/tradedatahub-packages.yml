@@ -1,0 +1,48 @@
+generated: '2026-08-29'
+method: searched
+source: registry searches + https://www.tradedatahub.net/developers/
+name: TradeDataHub client packages
+description: >-
+  TradeDataHub publishes NO client libraries, SDKs or CLI in any public package registry, and links to
+  no source repository from its site. This file records that verified absence so it reads as
+  "checked, nothing to record" rather than "not checked".
+packages: []
+package_count: 0
+official_package_count: 0
+registries_searched:
+  - registry: npm
+    query: tradedatahub
+    url: https://registry.npmjs.org/-/v1/search?text=tradedatahub
+    http_status: 200
+    results: 0
+    version: null
+    published: null
+  - registry: PyPI
+    query: tradedatahub
+    url: https://pypi.org/pypi/tradedatahub/json
+    http_status: 404
+    results: 0
+    version: null
+    published: null
+  - registry: GitHub
+    query: tradedatahub
+    url: https://api.github.com/search/repositories?q=tradedatahub
+    http_status: 200
+    results: 2
+    note: >-
+      Both hits belong to the api-evangelist organisation (this catalog's own profile repos), not to
+      TradeDataHub. No first-party TradeDataHub GitHub organisation or repository exists.
+    version: null
+    published: null
+docs_searched:
+  - https://www.tradedatahub.net/developers/
+  - https://www.tradedatahub.net/llms.txt
+  - https://www.tradedatahub.net/llms-full.txt
+finding: >-
+  The developer page names exactly three integration artifacts — /openapi.json, /llms.txt and
+  /llms-full.txt — and no SDK, no CLI, no code samples in any language, and no GitHub link. The only
+  third-party package referenced anywhere on the site is a jsDelivr CDN link to bootstrap@5.3.3, which
+  is site styling and not a TradeDataHub client library.
+gap: >-
+  With a clean 11-operation OpenAPI 3.1.0 contract, a generated TypeScript and Python client would be
+  near-free to publish and is the single largest missing developer-experience artifact here.

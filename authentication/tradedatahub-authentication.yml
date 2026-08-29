@@ -1,0 +1,47 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.tradedatahub.net/developers/
+spec: openapi/tradedatahub-openapi.json
+docs: https://www.tradedatahub.net/developers/
+name: TradeDataHub authentication profile
+description: >-
+  TradeDataHub publishes NO securitySchemes in its OpenAPI 3.1.0 contract, and none of the eleven
+  documented operations declares a security requirement. Every discovery endpoint under /api/v1/ is
+  genuinely unauthenticated and was called anonymously during this pass. The only credential-bearing
+  surface is the paid retrieval endpoint, which uses an x402 PAYMENT-SIGNATURE header rather than an
+  API key, bearer token or OAuth flow.
+schemes: []
+scheme_count: 0
+observed:
+  - surface: Free discovery endpoints (/api/v1/coverage, /states, /trades, /cities, /datasets, /datasets/{product_id}, /price, /preview, /texas-trades-teaser.json)
+    model: none
+    credential: null
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/coverage
+      http_status: 200
+      note: Returned live JSON with no Authorization header sent.
+  - surface: Paid retrieval (/api/v1/datasets/{product_id}/download)
+    model: x402-payment-header
+    credential: PAYMENT-SIGNATURE request header
+    declared_in_spec: false
+    network: Base Sepolia (eip155:84532) — TESTNET ONLY
+    evidence:
+      url: https://www.tradedatahub.net/api/v1/datasets/state:california/download
+      http_status: 402
+      note: >-
+        An unpaid GET returns HTTP 402 with a base64 Payment-Required header and a JSON
+        payment_required body carrying the x402 v2 challenge. Probed anonymously; no payment made.
+cors:
+  access_control_allow_origin: '*'
+  access_control_allow_methods: GET, HEAD, OPTIONS
+  access_control_allow_headers: Content-Type, Authorization, X-Requested-With, Payment-Signature
+  access_control_expose_headers: Payment-Required, Payment-Response
+  note: Observed on live responses from www.tradedatahub.net.
+gaps:
+  - >-
+    The x402 PAYMENT-SIGNATURE requirement is documented in prose (llms-full.txt and /developers/)
+    but is NOT expressed as an OpenAPI securityScheme, so a generated client cannot discover it.
+    An apiKey-in-header scheme named PAYMENT-SIGNATURE applied to the download operation would close this.
+  - >-
+    Human purchasing runs through Stripe Checkout, and API access for higher-volume use is negotiated by
+    email (tradedatahub@gmail.com per /api/v1/texas-trades-teaser.json). There is no self-serve key issuance.

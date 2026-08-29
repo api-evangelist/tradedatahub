@@ -1,0 +1,138 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/tradedatahub-openapi.json
+name: TradeDataHub MCP candidate
+description: >-
+  TradeDataHub publishes NO MCP server. This is a DERIVED CANDIDATE tool list computed from the eleven
+  GET operations in the provider's own OpenAPI 3.1.0 contract, offered as a design for a server that
+  does not yet exist. Nothing here is a callable endpoint.
+status: candidate
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: probed
+discovery:
+  probes:
+    - url: https://www.tradedatahub.net/.well-known/mcp.json
+      http_status: 404
+    - url: https://www.tradedatahub.net/mcp
+      http_status: 404
+    - url: https://www.tradedatahub.net/api/mcp
+      http_status: 404
+    - url: https://mcp.tradedatahub.net/mcp
+      http_status: null
+      note: DNS did not resolve — host does not exist.
+  registries_searched:
+    - registry: npm
+      query: tradedatahub
+      results: 0
+      url: https://registry.npmjs.org/-/v1/search?text=tradedatahub
+    - registry: PyPI
+      query: tradedatahub
+      results: 0
+      url: https://pypi.org/pypi/tradedatahub/json
+  docs_searched:
+    - https://www.tradedatahub.net/developers/
+    - https://www.tradedatahub.net/llms.txt
+    - https://www.tradedatahub.net/llms-full.txt
+  finding: >-
+    Neither llms.txt nor llms-full.txt nor the developer page mentions MCP. The provider's agent story
+    is llms.txt + OpenAPI + x402, not MCP.
+candidate_tools:
+  - name: get_coverage
+    description: Get overall platform coverage — total records, live states, trade count, city count, product count, currency and price model.
+    backing_operation: GET /api/v1/coverage
+    inputSchema:
+      type: object
+      properties: {}
+    read_only: true
+  - name: list_states
+    description: List live states with record counts and per-state CSV prices.
+    backing_operation: GET /api/v1/states
+    inputSchema:
+      type: object
+      properties: {}
+    read_only: true
+  - name: list_trades
+    description: List trade categories with aggregate record counts.
+    backing_operation: GET /api/v1/trades
+    inputSchema:
+      type: object
+      properties: {}
+    read_only: true
+  - name: list_cities
+    description: List cities, optionally filtered to one state.
+    backing_operation: GET /api/v1/cities
+    inputSchema:
+      type: object
+      properties:
+        state:
+          type: string
+          description: Exact state name, e.g. Texas.
+    read_only: true
+  - name: search_datasets
+    description: Enumerate the purchasable dataset catalog with optional state/trade/city/type filters and limit-offset pagination.
+    backing_operation: GET /api/v1/datasets
+    inputSchema:
+      type: object
+      properties:
+        state: {type: string}
+        trade: {type: string}
+        city: {type: string}
+        type: {type: string, enum: [city_trade, state_trade, state, mega_pack]}
+        limit: {type: integer, minimum: 1, maximum: 100, default: 100}
+        offset: {type: integer, minimum: 0, default: 0}
+    read_only: true
+  - name: get_dataset
+    description: Get one dataset's public metadata by product_id.
+    backing_operation: GET /api/v1/datasets/{product_id}
+    inputSchema:
+      type: object
+      required: [product_id]
+      properties:
+        product_id: {type: string}
+    read_only: true
+  - name: get_dataset_price
+    description: Get the authoritative current price and purchase availability for one dataset.
+    backing_operation: GET /api/v1/datasets/{product_id}/price
+    inputSchema:
+      type: object
+      required: [product_id]
+      properties:
+        product_id: {type: string}
+    read_only: true
+  - name: preview_dataset
+    description: Get a masked availability preview for a city_trade or state_trade dataset — field presence only, no paid contact values.
+    backing_operation: GET /api/v1/datasets/{product_id}/preview
+    inputSchema:
+      type: object
+      required: [product_id]
+      properties:
+        product_id: {type: string}
+    read_only: true
+  - name: get_teaser
+    description: Get the browser-safe masked Texas trade-business teaser.
+    backing_operation: GET /api/v1/texas-trades-teaser.json
+    inputSchema:
+      type: object
+      properties: {}
+    read_only: true
+  - name: download_dataset
+    description: >-
+      Retrieve the paid CSV. Without a PAYMENT-SIGNATURE header this returns the x402 HTTP 402
+      challenge, which an agent may inspect without paying. TESTNET ONLY (Base Sepolia eip155:84532).
+    backing_operation: GET /api/v1/datasets/{product_id}/download
+    inputSchema:
+      type: object
+      required: [product_id]
+      properties:
+        product_id: {type: string}
+    read_only: false
+    consequence: spends testnet funds when a payment signature is supplied
+candidate_tool_count: 10
+note: >-
+  Derived only. Do not treat any name here as an implemented tool. The inputSchemas are transcribed
+  from the provider's OpenAPI parameters, not invented.
