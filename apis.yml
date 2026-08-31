@@ -11,6 +11,18 @@ modified: '2026-08-29'
 specificationVersion: '0.21'
 tags:
   - contractor data
+  - B2B Data
+  - Business Listings
+  - Datasets
+  - CSV
+  - Lead Generation
+  - Sales Intelligence
+  - x402
+  - agent-native
+  - llms-txt
+  - OpenAPI
+tags_raw:
+  - contractor data
   - B2B data
   - business listings
   - datasets
@@ -29,6 +41,18 @@ apis:
     humanURL: https://www.tradedatahub.net/developers/
     baseURL: https://www.tradedatahub.net
     tags:
+      - contractor data
+      - B2B Data
+      - Business Listings
+      - Datasets
+      - CSV
+      - Lead Generation
+      - Sales Intelligence
+      - x402
+      - agent-native
+      - llms-txt
+      - OpenAPI
+    tags_raw:
       - contractor data
       - B2B data
       - business listings
