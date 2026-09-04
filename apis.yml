@@ -6,6 +6,22 @@ description: >-
   pricing) plus paid dataset retrieval via x402 (testnet-only, Base Sepolia). Backed by an OpenAPI 3.1.0 contract and
   llms.txt/llms-full.txt agent guides.
 url: https://raw.githubusercontent.com/api-evangelist/tradedatahub-public-api/refs/heads/main/apis.yml
+accessModel:
+  pricing: paid
+  onboarding: open
+  trial: false
+  try_now: false
+  public: true
+  label: Paid · Open access
+  confidence: high
+  source:
+  - plans
+  - authentication
+  - rate-limits
+  - security
+  - sandbox
+  generated: '2026-09-02'
+  method: derived
 created: '2026-08-29'
 modified: '2026-08-29'
 specificationVersion: '0.21'
