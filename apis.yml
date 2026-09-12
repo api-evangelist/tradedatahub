@@ -101,6 +101,8 @@ generated:
   confidence: 95
   at: '2026-08-29T02:05:47.534Z'
 common:
+- type: Website
+  url: https://www.tradedatahub.net/
 - type: DomainSecurity
   url: security/tradedatahub-domain-security.yml
 - type: DeveloperPortal
