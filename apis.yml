@@ -50,47 +50,54 @@ tags_raw:
   - llms.txt
   - OpenAPI
 apis:
-  - name: TradeDataHub Public API
-    description: >-
-      Free, unauthenticated REST discovery API for contractor/trade-business datasets, with paid CSV retrieval via x402
-      (testnet-only). Includes coverage stats, inventory discovery, dataset listings, pricing, and masked previews.
-    humanURL: https://www.tradedatahub.net/developers/
-    baseURL: https://www.tradedatahub.net
-    tags:
-      - contractor data
-      - B2B Data
-      - Business Listings
-      - Datasets
-      - CSV
-      - Lead Generation
-      - Sales Intelligence
-      - x402
-      - agent-native
-      - llms-txt
-      - OpenAPI
-    tags_raw:
-      - contractor data
-      - B2B data
-      - business listings
-      - datasets
-      - CSV
-      - lead generation
-      - sales intelligence
-      - x402
-      - agent-native
-      - llms.txt
-      - OpenAPI
-    properties:
-      - type: OpenAPI
-        url: https://www.tradedatahub.net/openapi.json
-      - type: OpenAPI
-        url: openapi/tradedatahub-openapi.json
-      - type: Documentation
-        url: https://www.tradedatahub.net/developers/
-      - type: LLMsTxt
-        url: https://www.tradedatahub.net/llms.txt
-      - type: LLMsTxt
-        url: https://www.tradedatahub.net/llms-full.txt
+- aid: tradedatahub:tradedatahub-commerce-api
+  name: TradeDataHub Public API Commerce API
+  description: x402 TESTNET paid retrieval. Mainnet is NOT enabled.
+  humanURL: https://www.tradedatahub.net/developers/
+  baseURL: https://www.tradedatahub.net
+  tags:
+  - commerce
+  properties:
+  - type: OpenAPI
+    url: openapi/tradedatahub-commerce-api-openapi.yml
+  - type: Documentation
+    url: https://www.tradedatahub.net/developers/
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms.txt
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms-full.txt
+- aid: tradedatahub:tradedatahub-datasets-api
+  name: TradeDataHub Public API Datasets API
+  description: Dataset metadata, pricing, masked previews.
+  humanURL: https://www.tradedatahub.net/developers/
+  baseURL: https://www.tradedatahub.net
+  tags:
+  - datasets
+  properties:
+  - type: OpenAPI
+    url: openapi/tradedatahub-datasets-api-openapi.yml
+  - type: Documentation
+    url: https://www.tradedatahub.net/developers/
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms.txt
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms-full.txt
+- aid: tradedatahub:tradedatahub-discovery-api
+  name: TradeDataHub Public API Discovery API
+  description: Zero-knowledge inventory discovery (coverage, states, trades, cities).
+  humanURL: https://www.tradedatahub.net/developers/
+  baseURL: https://www.tradedatahub.net
+  tags:
+  - discovery
+  properties:
+  - type: OpenAPI
+    url: openapi/tradedatahub-discovery-api-openapi.yml
+  - type: Documentation
+    url: https://www.tradedatahub.net/developers/
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms.txt
+  - type: LLMsTxt
+    url: https://www.tradedatahub.net/llms-full.txt
 maintainers:
   - FN: TradeDataHub
     email: tradedatahub@gmail.com
