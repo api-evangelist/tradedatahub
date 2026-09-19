@@ -56,6 +56,8 @@ apis:
   humanURL: https://www.tradedatahub.net/developers/
   baseURL: https://www.tradedatahub.net
   tags:
+  - Commerce
+  tags_raw:
   - commerce
   properties:
   - type: OpenAPI
@@ -72,6 +74,8 @@ apis:
   humanURL: https://www.tradedatahub.net/developers/
   baseURL: https://www.tradedatahub.net
   tags:
+  - Datasets
+  tags_raw:
   - datasets
   properties:
   - type: OpenAPI
@@ -88,6 +92,8 @@ apis:
   humanURL: https://www.tradedatahub.net/developers/
   baseURL: https://www.tradedatahub.net
   tags:
+  - Discovery
+  tags_raw:
   - discovery
   properties:
   - type: OpenAPI
