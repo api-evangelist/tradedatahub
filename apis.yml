@@ -34,7 +34,7 @@ tags:
   - Lead Generation
   - Sales Intelligence
   - x402
-  - agent-native
+  - Agent-Native
   - llms-txt
   - OpenAPI
 tags_raw:
@@ -54,7 +54,6 @@ apis:
   name: TradeDataHub Public API Commerce API
   description: x402 TESTNET paid retrieval. Mainnet is NOT enabled.
   humanURL: https://www.tradedatahub.net/developers/
-  baseURL: https://www.tradedatahub.net
   tags:
   - Commerce
   tags_raw:
@@ -72,7 +71,6 @@ apis:
   name: TradeDataHub Public API Datasets API
   description: Dataset metadata, pricing, masked previews.
   humanURL: https://www.tradedatahub.net/developers/
-  baseURL: https://www.tradedatahub.net
   tags:
   - Datasets
   tags_raw:
@@ -90,7 +88,6 @@ apis:
   name: TradeDataHub Public API Discovery API
   description: Zero-knowledge inventory discovery (coverage, states, trades, cities).
   humanURL: https://www.tradedatahub.net/developers/
-  baseURL: https://www.tradedatahub.net
   tags:
   - Discovery
   tags_raw:

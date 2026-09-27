@@ -165,6 +165,19 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
+    Pagination:
+      type: object
+      required:
+      - total
+      - limit
+      - offset
+      properties:
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
     Error:
       type: object
       required:
@@ -186,44 +199,6 @@ components:
             details:
               type: object
               additionalProperties: true
-    Trade:
-      type: object
-      required:
-      - trade
-      - record_count
-      - product_count
-      properties:
-        trade:
-          type: string
-        record_count:
-          type: integer
-        product_count:
-          type: integer
-    State:
-      type: object
-      required:
-      - product_id
-      - state
-      - record_count
-      - price
-      - currency
-      properties:
-        product_id:
-          type: string
-        state:
-          type: string
-        record_count:
-          type: integer
-        amount_cents:
-          type: integer
-        price:
-          type: string
-        currency:
-          type: string
-        last_updated:
-          type: string
-        available_for_purchase:
-          type: boolean
     PreviewRecord:
       type: object
       required:
@@ -277,21 +252,18 @@ components:
         last_updated:
           type: string
           nullable: true
-    City:
+    Trade:
       type: object
       required:
-      - state
-      - city
+      - trade
       - record_count
-      - trade_count
+      - product_count
       properties:
-        state:
-          type: string
-        city:
+        trade:
           type: string
         record_count:
           type: integer
-        trade_count:
+        product_count:
           type: integer
     Preview:
       type: object
@@ -319,16 +291,44 @@ components:
             $ref: '#/components/schemas/PreviewRecord'
         notice:
           type: string
-    Pagination:
+    State:
       type: object
       required:
-      - total
-      - limit
-      - offset
+      - product_id
+      - state
+      - record_count
+      - price
+      - currency
       properties:
-        total:
+        product_id:
+          type: string
+        state:
+          type: string
+        record_count:
           type: integer
-        limit:
+        amount_cents:
           type: integer
-        offset:
+        price:
+          type: string
+        currency:
+          type: string
+        last_updated:
+          type: string
+        available_for_purchase:
+          type: boolean
+    City:
+      type: object
+      required:
+      - state
+      - city
+      - record_count
+      - trade_count
+      properties:
+        state:
+          type: string
+        city:
+          type: string
+        record_count:
+          type: integer
+        trade_count:
           type: integer

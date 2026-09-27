@@ -167,34 +167,19 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Preview:
+    Pagination:
       type: object
       required:
-      - api_version
-      - product_id
-      - classification
-      - records
+      - total
+      - limit
+      - offset
       properties:
-        api_version:
-          type: string
-        product_id:
-          type: string
-        classification:
-          type: string
-        record_count:
+        total:
           type: integer
-        fields:
-          type: array
-          items:
-            type: string
-        records:
-          type: array
-          items:
-            $ref: '#/components/schemas/PreviewRecord'
-        notice:
-          type: string
-    Price:
-      $ref: '#/components/schemas/Dataset'
+        limit:
+          type: integer
+        offset:
+          type: integer
     Error:
       type: object
       required:
@@ -216,6 +201,8 @@ components:
             details:
               type: object
               additionalProperties: true
+    Price:
+      $ref: '#/components/schemas/Dataset'
     PreviewRecord:
       type: object
       required:
@@ -278,19 +265,32 @@ components:
           type: string
         available_for_purchase:
           type: boolean
-    Pagination:
+    Preview:
       type: object
       required:
-      - total
-      - limit
-      - offset
+      - api_version
+      - product_id
+      - classification
+      - records
       properties:
-        total:
+        api_version:
+          type: string
+        product_id:
+          type: string
+        classification:
+          type: string
+        record_count:
           type: integer
-        limit:
-          type: integer
-        offset:
-          type: integer
+        fields:
+          type: array
+          items:
+            type: string
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreviewRecord'
+        notice:
+          type: string
   parameters:
     ProductId:
       name: product_id
