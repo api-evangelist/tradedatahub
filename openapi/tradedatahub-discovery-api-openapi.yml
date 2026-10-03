@@ -165,19 +165,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Pagination:
-      type: object
-      required:
-      - total
-      - limit
-      - offset
-      properties:
-        total:
-          type: integer
-        limit:
-          type: integer
-        offset:
-          type: integer
     Error:
       type: object
       required:
@@ -199,32 +186,6 @@ components:
             details:
               type: object
               additionalProperties: true
-    PreviewRecord:
-      type: object
-      required:
-      - business
-      - city
-      - trade
-      - phone_available
-      - website_available
-      properties:
-        business:
-          type: string
-          description: Always the literal `Masked business` in previews.
-          example: Masked business
-        city:
-          type: string
-        trade:
-          type: string
-        phone_available:
-          type: boolean
-          description: Whether the purchased record includes a phone value.
-        website_available:
-          type: boolean
-          description: Whether the purchased record includes a website value.
-        verification_date:
-          type: string
-          description: Source-pipeline verification date (YYYY-MM-DD).
     Coverage:
       type: object
       required:
@@ -252,6 +213,35 @@ components:
         last_updated:
           type: string
           nullable: true
+    City:
+      type: object
+      required:
+      - state
+      - city
+      - record_count
+      - trade_count
+      properties:
+        state:
+          type: string
+        city:
+          type: string
+        record_count:
+          type: integer
+        trade_count:
+          type: integer
+    Pagination:
+      type: object
+      required:
+      - total
+      - limit
+      - offset
+      properties:
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
     Trade:
       type: object
       required:
@@ -265,6 +255,57 @@ components:
           type: integer
         product_count:
           type: integer
+    State:
+      type: object
+      required:
+      - product_id
+      - state
+      - record_count
+      - price
+      - currency
+      properties:
+        product_id:
+          type: string
+        state:
+          type: string
+        record_count:
+          type: integer
+        amount_cents:
+          type: integer
+        price:
+          type: string
+        currency:
+          type: string
+        last_updated:
+          type: string
+        available_for_purchase:
+          type: boolean
+    PreviewRecord:
+      type: object
+      required:
+      - business
+      - city
+      - trade
+      - phone_available
+      - website_available
+      properties:
+        business:
+          type: string
+          description: Always the literal `Masked business` in previews.
+          example: Masked business
+        city:
+          type: string
+        trade:
+          type: string
+        phone_available:
+          type: boolean
+          description: Whether the purchased record includes a phone value.
+        website_available:
+          type: boolean
+          description: Whether the purchased record includes a website value.
+        verification_date:
+          type: string
+          description: Source-pipeline verification date (YYYY-MM-DD).
     Preview:
       type: object
       required:
@@ -291,44 +332,3 @@ components:
             $ref: '#/components/schemas/PreviewRecord'
         notice:
           type: string
-    State:
-      type: object
-      required:
-      - product_id
-      - state
-      - record_count
-      - price
-      - currency
-      properties:
-        product_id:
-          type: string
-        state:
-          type: string
-        record_count:
-          type: integer
-        amount_cents:
-          type: integer
-        price:
-          type: string
-        currency:
-          type: string
-        last_updated:
-          type: string
-        available_for_purchase:
-          type: boolean
-    City:
-      type: object
-      required:
-      - state
-      - city
-      - record_count
-      - trade_count
-      properties:
-        state:
-          type: string
-        city:
-          type: string
-        record_count:
-          type: integer
-        trade_count:
-          type: integer

@@ -167,19 +167,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Pagination:
-      type: object
-      required:
-      - total
-      - limit
-      - offset
-      properties:
-        total:
-          type: integer
-        limit:
-          type: integer
-        offset:
-          type: integer
     Error:
       type: object
       required:
@@ -203,32 +190,19 @@ components:
               additionalProperties: true
     Price:
       $ref: '#/components/schemas/Dataset'
-    PreviewRecord:
+    Pagination:
       type: object
       required:
-      - business
-      - city
-      - trade
-      - phone_available
-      - website_available
+      - total
+      - limit
+      - offset
       properties:
-        business:
-          type: string
-          description: Always the literal `Masked business` in previews.
-          example: Masked business
-        city:
-          type: string
-        trade:
-          type: string
-        phone_available:
-          type: boolean
-          description: Whether the purchased record includes a phone value.
-        website_available:
-          type: boolean
-          description: Whether the purchased record includes a website value.
-        verification_date:
-          type: string
-          description: Source-pipeline verification date (YYYY-MM-DD).
+        total:
+          type: integer
+        limit:
+          type: integer
+        offset:
+          type: integer
     Dataset:
       type: object
       required:
@@ -265,6 +239,32 @@ components:
           type: string
         available_for_purchase:
           type: boolean
+    PreviewRecord:
+      type: object
+      required:
+      - business
+      - city
+      - trade
+      - phone_available
+      - website_available
+      properties:
+        business:
+          type: string
+          description: Always the literal `Masked business` in previews.
+          example: Masked business
+        city:
+          type: string
+        trade:
+          type: string
+        phone_available:
+          type: boolean
+          description: Whether the purchased record includes a phone value.
+        website_available:
+          type: boolean
+          description: Whether the purchased record includes a website value.
+        verification_date:
+          type: string
+          description: Source-pipeline verification date (YYYY-MM-DD).
     Preview:
       type: object
       required:
