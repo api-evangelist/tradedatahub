@@ -67,27 +67,6 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Error:
-      type: object
-      required:
-      - api_version
-      - error
-      properties:
-        api_version:
-          type: string
-        error:
-          type: object
-          required:
-          - code
-          - message
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-              additionalProperties: true
     PaymentRequired:
       type: object
       required:
@@ -140,6 +119,27 @@ components:
                   payTo:
                     type: string
                     description: Testnet recipient address.
+    Error:
+      type: object
+      required:
+      - api_version
+      - error
+      properties:
+        api_version:
+          type: string
+        error:
+          type: object
+          required:
+          - code
+          - message
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              additionalProperties: true
   parameters:
     ProductId:
       name: product_id
