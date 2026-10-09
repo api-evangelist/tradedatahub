@@ -83,3 +83,34 @@ coverage_at_capture:
   product_count: 8588
   last_updated: '2026-08-19'
   source: https://www.tradedatahub.net/api/v1/coverage
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - subscription
+  units: []
+  plans:
+  - name: City + trade CSV
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: State + trade CSV
+    access: other
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: State CSV
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
+  - name: Seven-state pack
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods: []
