@@ -167,34 +167,53 @@ paths:
       x-operation-id-source: derived
 components:
   schemas:
-    Price:
-      $ref: '#/components/schemas/Dataset'
-    Preview:
+    PreviewRecord:
+      type: object
+      required:
+      - business
+      - city
+      - trade
+      - phone_available
+      - website_available
+      properties:
+        business:
+          type: string
+          description: Always the literal `Masked business` in previews.
+          example: Masked business
+        city:
+          type: string
+        trade:
+          type: string
+        phone_available:
+          type: boolean
+          description: Whether the purchased record includes a phone value.
+        website_available:
+          type: boolean
+          description: Whether the purchased record includes a website value.
+        verification_date:
+          type: string
+          description: Source-pipeline verification date (YYYY-MM-DD).
+    Error:
       type: object
       required:
       - api_version
-      - product_id
-      - classification
-      - records
+      - error
       properties:
         api_version:
           type: string
-        product_id:
-          type: string
-        classification:
-          type: string
-        record_count:
-          type: integer
-        fields:
-          type: array
-          items:
-            type: string
-        records:
-          type: array
-          items:
-            $ref: '#/components/schemas/PreviewRecord'
-        notice:
-          type: string
+        error:
+          type: object
+          required:
+          - code
+          - message
+          properties:
+            code:
+              type: string
+            message:
+              type: string
+            details:
+              type: object
+              additionalProperties: true
     Dataset:
       type: object
       required:
@@ -231,53 +250,6 @@ components:
           type: string
         available_for_purchase:
           type: boolean
-    Error:
-      type: object
-      required:
-      - api_version
-      - error
-      properties:
-        api_version:
-          type: string
-        error:
-          type: object
-          required:
-          - code
-          - message
-          properties:
-            code:
-              type: string
-            message:
-              type: string
-            details:
-              type: object
-              additionalProperties: true
-    PreviewRecord:
-      type: object
-      required:
-      - business
-      - city
-      - trade
-      - phone_available
-      - website_available
-      properties:
-        business:
-          type: string
-          description: Always the literal `Masked business` in previews.
-          example: Masked business
-        city:
-          type: string
-        trade:
-          type: string
-        phone_available:
-          type: boolean
-          description: Whether the purchased record includes a phone value.
-        website_available:
-          type: boolean
-          description: Whether the purchased record includes a website value.
-        verification_date:
-          type: string
-          description: Source-pipeline verification date (YYYY-MM-DD).
     Pagination:
       type: object
       required:
@@ -291,6 +263,34 @@ components:
           type: integer
         offset:
           type: integer
+    Price:
+      $ref: '#/components/schemas/Dataset'
+    Preview:
+      type: object
+      required:
+      - api_version
+      - product_id
+      - classification
+      - records
+      properties:
+        api_version:
+          type: string
+        product_id:
+          type: string
+        classification:
+          type: string
+        record_count:
+          type: integer
+        fields:
+          type: array
+          items:
+            type: string
+        records:
+          type: array
+          items:
+            $ref: '#/components/schemas/PreviewRecord'
+        notice:
+          type: string
   parameters:
     ProductId:
       name: product_id
